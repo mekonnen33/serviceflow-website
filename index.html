@@ -47,6 +47,7 @@ button{font-family:var(--bf)}
 .nav-links a{font-size:13px;font-weight:500;color:var(–soft);transition:color 0.2s}
 .nav-links a:hover{color:var(–ink)}
 .nav-acts{display:flex;gap:10px;align-items:center}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px;background:transparent;border:none;cursor:pointer;flex-shrink:0}
 .btn-ng{padding:9px 20px;border-radius:100px;background:transparent;border:1.5px solid var(–bdr);color:var(–ink);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
 .btn-ng:hover{border-color:var(–acc);color:var(–acc)}
 .btn-nf{padding:9px 22px;border-radius:100px;background:var(–acc);border:none;color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
@@ -487,54 +488,54 @@ footer{background:var(–ink);color:#f0ede6;padding:48px}
 TABLET  (≤ 960px)
 ───────────────────────────────────────────────────────── */
 @media(max-width:960px){
-/* Nav */
+/* ── NAV ── */
 .nav{padding:0 20px}
 .nav-links{display:none}
 .nav-acts{gap:8px}
 
-/* Hero — left only, tighter */
-.hero{grid-template-columns:1fr;padding:56px 20px 44px;gap:0}
+/* ── HERO ── */
+.hero{grid-template-columns:1fr;padding:52px 20px 40px;gap:0}
 .hero-right{display:none}
-.hero h1{font-size:2.6rem}
+.hero h1{font-size:2.5rem}
 .hero-sub{max-width:100%;font-size:0.95rem}
 
-/* Sections */
-.sec{padding:56px 20px}
-.sec-bg{padding:56px 20px}
+/* ── SECTIONS ── */
+.sec{padding:52px 20px}
+.sec-bg{padding:52px 20px}
 .sec-bg-inner{padding:0}
-.ct-sec{padding:56px 20px}
-.rev-section{padding:56px 20px}
-.partners-strip{padding:28px 20px}
+.ct-sec{padding:52px 20px}
+.rev-section{padding:52px 20px}
+.partners-strip{padding:24px 20px}
 
-/* Pricing grids → single column */
+/* ── GRIDS ── */
 .wp-grid{grid-template-columns:1fr}
 .sys-grid{grid-template-columns:1fr}
 .ao-row{grid-template-columns:1fr 1fr}
 .cp-grid{grid-template-columns:1fr 1fr}
 .lc-grid{grid-template-columns:1fr}
-.ct-inner{grid-template-columns:1fr;gap:36px}
-.fg{grid-template-columns:1fr 1fr;gap:28px}
+.ct-inner{grid-template-columns:1fr;gap:32px}
+.fg{grid-template-columns:1fr 1fr;gap:24px}
 .pf-grid{grid-template-columns:1fr 1fr}
 
-/* Portfolio section header */
-.ps-sec-h{font-size:1.45rem}
+/* ── TYPOGRAPHY ── */
+.ps-sec-h{font-size:1.4rem}
+.su{margin-bottom:28px}
 
-/* Reviews */
+/* ── REVIEWS ── */
 .rev-card{flex:0 0 calc(50% - 9px);margin-right:18px}
 
-/* Modals */
+/* ── MODALS ── */
 .mo{padding:16px}
 .mb{max-width:100%;border-radius:var(–rad-lg)}
 
-/* Footer */
-footer{padding:36px 20px}
-.fg{grid-template-columns:1fr 1fr;gap:28px}
+/* ── FOOTER ── */
+footer{padding:36px 20px 0}
 
-/* Misc */
+/* ── MISC ── */
 .chat-win{width:calc(100vw - 40px);right:20px}
 .ml-table{font-size:12px}
 .ps-logo{padding:8px 14px}
-.ao-bundle{flex-direction:column;align-items:flex-start;gap:14px}
+.ao-bundle{flex-direction:column;align-items:flex-start;gap:12px}
 .multi-loc{padding:20px}
 }
 
@@ -542,163 +543,209 @@ footer{padding:36px 20px}
 MOBILE  (≤ 640px)
 ───────────────────────────────────────────────────────── */
 @media(max-width:640px){
-/* Nav */
-.nav{padding:0 16px;height:60px}
+/* ── NAV ── */
+.nav{padding:0 16px;height:58px}
 .nav-acts{display:none}
 .hamburger{display:flex}
-.nav-logo-img{height:36px}
+.nav-logo-img{height:34px}
 
-/* Hero */
-.hero{padding:44px 16px 36px}
-.hero-ey{font-size:9px;letter-spacing:0.15em}
-.hero h1{font-size:2.1rem;line-height:1.12}
-.hero-sub{font-size:0.9rem;line-height:1.72;margin-bottom:22px}
-.hero-ctas{flex-direction:column;gap:10px;margin-bottom:24px}
-.btn-f,.btn-o{width:100%;text-align:center;justify-content:center;padding:13px 20px;font-size:13px}
-.hero-proof{font-size:11px;flex-wrap:wrap;gap:6px}
-.sp-avs{gap:3px}
-.sp-av{width:24px;height:24px;font-size:12px}
+/* ── HERO ── */
+.hero{padding:40px 16px 32px}
+.hero-ey{font-size:9px;letter-spacing:0.14em}
+.hero h1{font-size:2rem;line-height:1.1;letter-spacing:-0.01em}
+.hero-sub{font-size:0.88rem;line-height:1.7;margin-bottom:20px}
+.hero-ctas{flex-direction:column;gap:9px;margin-bottom:20px}
+.btn-f,.btn-o{width:100%;justify-content:center;padding:14px 16px;font-size:13px;border-radius:12px}
+.hero-proof{font-size:11px;flex-wrap:wrap;gap:5px;margin-top:0}
+.sp-avs{gap:2px}
+.sp-av{width:22px;height:22px;font-size:11px}
 
-/* Sections */
-.sec{padding:44px 16px}
-.sec-bg{padding:44px 16px}
-.ct-sec{padding:44px 16px}
-.rev-section{padding:44px 16px}
-.partners-strip{padding:20px 16px}
+/* ── SECTION SPACING ── */
+.sec{padding:40px 16px}
+.sec-bg{padding:40px 16px}
+.ct-sec{padding:40px 16px}
+.rev-section{padding:40px 16px}
+.partners-strip{padding:18px 16px}
 .sec-bg-inner{padding:0}
 
-/* Section headings */
-.ti{font-size:1.6rem}
-.su{font-size:13px;max-width:100%}
-.ps-sec-h{font-size:1.3rem}
-.ps-sec-sub{font-size:13px}
-.ey{font-size:9px;letter-spacing:0.16em}
+/* ── SECTION HEADERS ── */
+.ti{font-size:1.55rem;line-height:1.12;margin-bottom:10px}
+.su{font-size:13px;max-width:100%;margin-bottom:20px}
+.ps-sec-h{font-size:1.25rem;line-height:1.15}
+.ps-sec-sub{font-size:12px;margin-bottom:20px!important}
+.ey{font-size:9px;letter-spacing:0.14em}
+.ps-eyebrow{margin-bottom:6px}
 
-/* Portfolio */
-.pf-grid{grid-template-columns:1fr;gap:16px}
-.pf-thumb{height:160px}
-.pf-body{padding:16px 16px 18px}
-.pf-tags{gap:4px}
+/* ── PORTFOLIO CARDS ── */
+.pf-grid{grid-template-columns:1fr;gap:14px}
+.pf-thumb{height:148px}
+.pf-body{padding:14px 14px 16px}
+.pf-biz{font-size:1rem}
+.pf-niche{font-size:11px;margin-bottom:10px}
+.pf-tags{gap:3px;margin-bottom:12px}
 .pf-tag{font-size:9px;padding:2px 7px}
-.pf-foot{gap:8px}
-.pf-btn-expand{padding:8px 10px;font-size:11px}
+.pf-foot{gap:7px}
+.pf-btn-demo{font-size:12px;padding:10px}
+.pf-btn-expand{padding:9px 10px;font-size:11px}
 
-/* Website packages */
-.wp-grid{grid-template-columns:1fr;gap:14px}
-.wp-hd{padding:20px 20px 0}
-.wp-bd{padding:0 20px 18px}
-.wp-ft{padding:0 20px 20px}
-.wp-amt{font-size:2rem}
-.wp-tagline{margin:0 20px 14px;font-size:11px}
-.wp-name{font-size:1.15rem}
-.wp-feats li{font-size:12px}
-.wp-cta{font-size:12px;padding:11px}
+/* ── WEBSITE PACKAGES ── */
+.wp-grid{grid-template-columns:1fr;gap:12px}
+.wp-hd{padding:18px 18px 0}
+.wp-bd{padding:0 18px 14px}
+.wp-ft{padding:0 18px 18px;gap:8px}
+.wp-tier{margin-bottom:4px}
+.wp-name{font-size:1.1rem;margin-bottom:10px}
+.wp-amt{font-size:1.9rem}
+.wp-tagline{margin:0 18px 12px;font-size:11px;padding:6px 9px}
+.wp-feats{gap:5px;padding-bottom:12px}
+.wp-feats li{font-size:11.5px;gap:7px}
+.wp-cta{font-size:12px;padding:12px;border-radius:10px}
 .wp-compare{font-size:11px}
+.wp-ribbon{font-size:8px;padding:4px 10px}
+.wp-note{font-size:11px;margin-top:12px}
 
-/* Automation systems */
-.sys-grid{grid-template-columns:1fr;gap:14px}
-.sys{padding:20px}
-.sys-name{font-size:14px}
-.sys-sub{font-size:12px}
-.sys-bullets li{font-size:12px}
-.sys-price-row{flex-direction:column;align-items:flex-start;gap:10px}
+/* ── AUTOMATION SYSTEMS ── */
+.sys-grid{grid-template-columns:1fr;gap:12px}
+.sys{padding:18px}
+.sys-icon{width:40px;height:40px;font-size:18px;margin-bottom:12px}
+.sys-name{font-size:13.5px;margin-bottom:4px}
+.sys-sub{font-size:12px;margin-bottom:10px}
+.sys-bullets{gap:4px;margin-bottom:12px}
+.sys-bullets li{font-size:11.5px}
+.sys-price-row{flex-direction:column;align-items:flex-start;gap:9px;padding-top:12px}
 .sys-price{font-size:12px}
-.sys-cta{width:100%;text-align:center;padding:10px}
-.sys-pkg-note{font-size:10px}
+.sys-cta{width:100%;text-align:center;padding:11px;border-radius:10px;font-size:12px}
+.sys-pkg-note{font-size:10px;padding:4px 7px;margin-top:0}
 
-/* Add-ons */
-.ao-row{grid-template-columns:1fr;gap:10px}
-.ao{padding:14px}
-.ao-ico{width:34px;height:34px;font-size:15px;flex-shrink:0}
-.ao-name{font-size:12px}
-.ao-desc{font-size:11px}
+/* ── ADD-ONS ── */
+.ao-row{grid-template-columns:1fr;gap:9px}
+.ao{padding:13px;gap:10px}
+.ao-ico{width:32px;height:32px;font-size:14px;border-radius:8px;flex-shrink:0}
+.ao-name{font-size:12px;margin-bottom:2px}
+.ao-desc{font-size:11px;margin-bottom:4px;line-height:1.45}
 .ao-price{font-size:11px}
-.ao-group-hd{padding:10px 0 8px;margin-bottom:10px}
-.ao-bundle{flex-direction:column;align-items:flex-start;gap:12px}
+.ao-group-hd{padding:9px 0 8px;margin-bottom:10px}
+.ao-group-label{font-size:9px}
+.ao-bundle{flex-direction:column;align-items:flex-start;gap:10px;padding:12px 14px}
 .ao-bundle-text{font-size:12px}
 
-/* Care plans */
-.cp-grid{grid-template-columns:1fr;gap:14px}
-.cp-hd{padding:18px 18px 14px}
-.cp-bd{padding:12px 18px 18px}
-.cp-name{font-size:1.05rem}
-.cp-amt{font-size:1.75rem}
-.cp-feats li{font-size:12px}
-.cp-cta{font-size:12px;padding:10px}
-.cp-note{font-size:11px}
+/* ── CARE PLANS ── */
+.cp-grid{grid-template-columns:1fr;gap:12px}
+.cp-hd{padding:16px 16px 12px}
+.cp-bd{padding:10px 16px 16px}
+.cp-name{font-size:1rem;margin-bottom:8px}
+.cp-amt{font-size:1.7rem}
+.cp-sub{font-size:11px}
+.cp-feats{gap:5px;margin-bottom:14px}
+.cp-feats li{font-size:11.5px;gap:7px}
+.cp-cta{font-size:12px;padding:11px;border-radius:10px}
+.cp-badge{font-size:9px;padding:2px 8px;top:11px;right:11px}
+.cp-note{font-size:11px;margin-top:12px}
+.cp-note > div{padding:11px 14px!important;font-size:11px!important}
 
-/* Lead capture */
-.lc-grid{grid-template-columns:1fr;gap:14px;margin-top:28px}
-.lc{padding:22px}
-.lc-ti{font-size:1.1rem}
-.lc-desc{font-size:12px;margin-bottom:16px}
-.btn-audit,.btn-new{font-size:13px;padding:12px}
+/* ── LEAD CAPTURE ── */
+.lc-grid{grid-template-columns:1fr;gap:12px;margin-top:24px}
+.lc{padding:20px}
+.lc-ico{width:42px;height:42px;font-size:18px;margin-bottom:10px}
+.lc-ti{font-size:1.05rem;margin-bottom:6px}
+.lc-desc{font-size:12px;margin-bottom:14px;line-height:1.55}
+.lc-note{font-size:11px;margin-top:6px}
+.btn-audit,.btn-new{font-size:13px;padding:12px;border-radius:10px}
 
-/* Reviews */
+/* ── REVIEWS ── */
 .rev-card{flex:0 0 100%;margin-right:0}
-.rev-controls{gap:10px;margin-top:16px}
-.rev-arr{width:32px;height:32px}
+.rc-text{font-size:12.5px;line-height:1.6;margin-bottom:10px}
+.rev-controls{gap:9px;margin-top:14px}
+.rev-arr{width:30px;height:30px;font-size:13px}
 
-/* Contact section */
-.ct-inner{grid-template-columns:1fr;gap:28px}
-.ct-left h2{font-size:1.5rem}
-.hs-wrap{padding:20px}
+/* ── CONTACT SECTION ── */
+.ct-inner{grid-template-columns:1fr;gap:24px}
+.ct-left h2{font-size:1.4rem;line-height:1.18}
+.ct-left p{font-size:13px;margin-bottom:16px}
+.ct-promises{gap:7px}
+.ct-p{font-size:12px;gap:8px}
+.ct-p-ico{width:26px;height:26px;font-size:11px;border-radius:7px}
+.hs-wrap{padding:18px}
+.hs-ti{font-size:14px}
+.hs-su{font-size:12px}
 
-/* Multi-location */
-.multi-loc{padding:18px;margin-top:20px}
-.ml-head{gap:8px;margin-bottom:14px}
-.ml-title{font-size:1.05rem}
+/* ── MULTI-LOCATION ── */
+.multi-loc{padding:16px;margin-top:16px}
+.ml-head{gap:7px;margin-bottom:12px}
+.ml-title{font-size:1rem}
+.ml-sub{font-size:12px;margin-bottom:12px}
 .ml-table{font-size:11px}
-.ml-table th,.ml-table td{padding:8px 10px}
-.ml-cta{flex-direction:column;align-items:flex-start;gap:10px}
+.ml-table th,.ml-table td{padding:7px 9px}
+.ml-cta{flex-direction:column;align-items:flex-start;gap:9px}
+.ml-badge{font-size:10px;padding:3px 10px}
 
-/* Partners */
-.ps-inner{text-align:left}
-.ps-logos{justify-content:flex-start;gap:0}
-.ps-logo{padding:8px 12px;font-size:12px;border-right:1px solid var(–bdr)}
+/* ── PARTNERS ── */
+.ps-title{font-size:9px;margin-bottom:12px}
+.ps-logos{flex-wrap:wrap;gap:0}
+.ps-logo{padding:7px 10px;font-size:11px}
 
-/* Footer */
-footer{padding:32px 16px 0}
-.fg{grid-template-columns:1fr;gap:24px}
-.f-bottom{flex-direction:column;align-items:flex-start;gap:6px;font-size:10px}
-.f-logo-svg{margin-bottom:6px}
-.f-logo-name{font-size:16px}
+/* ── FOOTER ── */
+footer{padding:28px 16px 0}
+.fg{grid-template-columns:1fr;gap:20px}
+.f-col-ti{margin-bottom:10px}
+.f-links{gap:9px}
+.f-links a{font-size:13px}
+.f-tagline{font-size:11px}
+.f-bottom{flex-direction:column;align-items:flex-start;gap:5px;font-size:10px;padding-top:16px}
+.f-logo-svg{margin-bottom:4px}
+.f-logo-name{font-size:15px}
+.f-logo-sub{font-size:7px;letter-spacing:0.22em}
 
-/* Modals */
-.mo{padding:12px;align-items:flex-end}
-.mb{max-height:96vh;border-radius:var(–rad-lg) var(–rad-lg) 0 0;border-bottom-left-radius:0;border-bottom-right-radius:0}
-.mh{padding:16px 18px 0}
-.mbody{padding:12px 18px 18px}
+/* ── MODALS ── */
+.mo{padding:0;align-items:flex-end;background:rgba(13,27,46,0.75)}
+.mb{max-height:94vh;border-radius:20px 20px 0 0;width:100%}
+.mh{padding:16px 16px 0}
+.mh-title{font-size:1.1rem}
+.mh-sub{font-size:11px}
+.mbody{padding:12px 16px 24px}
+.mi{padding:10px 11px!important;font-size:13px!important}
 .mi-row{grid-template-columns:1fr}
+.ms-q{font-size:14px}
+.ms-opts{gap:6px}
+.ms-opt{padding:10px 12px;font-size:13px}
+.mn-next{padding:12px;font-size:13px;border-radius:10px}
+.mn-back{padding:12px 14px;font-size:12px}
 
-/* Lightbox */
-.pf-lb{padding:12px}
-.pf-lb-box{border-radius:var(–rad-lg);max-height:96vh}
-.lb-box{border-radius:var(–rad-lg)}
+/* ── LIGHTBOX ── */
+.pf-lb{padding:0;align-items:flex-end}
+.pf-lb-box{border-radius:20px 20px 0 0;max-height:96vh}
+.pf-lb-hd{padding:10px 14px}
 
-/* Chatbot */
-.chat-win{width:calc(100vw - 24px);right:12px;bottom:84px}
-.chat-fab{bottom:20px;right:16px}
+/* ── CHATBOT ── */
+.chat-win{width:calc(100vw - 20px);right:10px;bottom:80px;border-radius:var(–rad-xl) var(–rad-xl) 0 0}
+.chat-fab{bottom:18px;right:14px;width:50px;height:50px}
 
-/* Misc overflow guards */
-.wp-ribbon{font-size:8px;padding:4px 10px}
-.cp-badge{font-size:9px;padding:2px 8px;top:12px;right:12px}
-.ps-badge{font-size:9px;padding:3px 10px}
-img,svg,iframe{max-width:100%}
-*{box-sizing:border-box}
+/* ── STEP BADGES (prevent wrapping) ── */
+.ps-badge{font-size:9px;padding:3px 9px;white-space:nowrap}
+.ps-eyebrow{gap:8px}
+
+/* ── OVERFLOW GUARDS ── */
+html,body{overflow-x:hidden}
+img,svg,iframe,video{max-width:100%}
+*{box-sizing:border-box;min-width:0}
+[style*=“max-width”]{max-width:100%!important}
 }
 
 /* ─────────────────────────────────────────────────────────
 SMALL PHONE  (≤ 380px)
 ───────────────────────────────────────────────────────── */
 @media(max-width:380px){
-.hero h1{font-size:1.85rem}
-.ti{font-size:1.45rem}
-.wp-amt,.cp-amt{font-size:1.65rem}
-.sec,.sec-bg,.ct-sec{padding:36px 14px}
+.hero h1{font-size:1.8rem}
+.hero{padding:34px 14px 28px}
+.ti{font-size:1.4rem}
+.ps-sec-h{font-size:1.15rem}
+.wp-amt,.cp-amt{font-size:1.6rem}
+.sec,.sec-bg,.ct-sec{padding:34px 14px}
+.rev-section{padding:34px 14px}
 .fg{grid-template-columns:1fr}
-.rev-section{padding:36px 14px}
-.btn-f,.btn-o{font-size:12px}
+.btn-f,.btn-o{font-size:12px;padding:13px 14px}
+.mq-item{font-size:9px;padding:0 14px}
+.f-bottom{font-size:9px}
 }
 </style>
 
