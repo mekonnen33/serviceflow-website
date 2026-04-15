@@ -340,6 +340,7 @@ button{font-family:var(--bf)}
 .mh-title{font-family:var(--hf);font-size:1.3rem;font-weight:700}
 .mh-sub{font-size:12px;color:var(--soft);margin-top:3px}
 .mc-btn{background:transparent;border:none;font-size:20px;cursor:pointer;color:var(--soft);padding:4px}
+.mc-restart{background:transparent;border:1px solid var(--am);border-radius:100px;color:var(--acc);cursor:pointer;font-family:var(--bf);font-size:11px;font-weight:500;line-height:1;padding:5px 10px;white-space:nowrap}
 .mc-btn:hover{color:var(--ink)}
 .mbody{padding:16px 26px 26px}
 .mprog{display:flex;gap:5px;margin-bottom:18px}
@@ -849,7 +850,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
       </div>
       <div class="wp-ft">
         <button class="wp-cta" onclick="openM('new')">Get Started &rarr;</button>
-        <div class="wp-compare" onclick="document.getElementById('care-plans').scrollIntoView({behavior:'smooth'})">+ Add a Care Plan from $29/mo</div>
+        <div class="wp-compare" onclick="document.getElementById('care-plans').scrollIntoView({behavior:'smooth'})">+ Add a Care Plan from $79/mo</div>
       </div>
     </div>
 
@@ -883,7 +884,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
       </div>
       <div class="wp-ft">
         <button class="wp-cta" onclick="openM('new')">Build My Growth Site &rarr;</button>
-        <div class="wp-compare" style="color:rgba(240,237,230,0.45);cursor:pointer" onclick="document.getElementById('care-plans').scrollIntoView({behavior:'smooth'})">+ Add a Care Plan from $49/mo</div>
+        <div class="wp-compare" style="color:rgba(240,237,230,0.45);cursor:pointer" onclick="document.getElementById('care-plans').scrollIntoView({behavior:'smooth'})">+ Add a Care Plan from $129/mo</div>
       </div>
     </div>
 
@@ -916,7 +917,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
       </div>
       <div class="wp-ft">
         <button class="wp-cta" onclick="openM('new')">Build My Premium Site &rarr;</button>
-        <div class="wp-compare" style="color:rgba(255,255,255,0.55);cursor:pointer" onclick="document.getElementById('care-plans').scrollIntoView({behavior:'smooth'})">+ Add a Care Plan from $99/mo</div>
+        <div class="wp-compare" style="color:rgba(255,255,255,0.55);cursor:pointer" onclick="document.getElementById('care-plans').scrollIntoView({behavior:'smooth'})">+ Add a Care Plan from $199/mo</div>
       </div>
     </div>
 
@@ -1090,7 +1091,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
         <div class="cp-hd">
           <div class="cp-tier">Basic Care</div>
           <div class="cp-name">Hosted &amp; maintained</div>
-          <div class="cp-price-row"><span class="cp-amt">$29</span><span class="cp-per">/mo</span></div>
+          <div class="cp-price-row"><span class="cp-amt">$79</span><span class="cp-per">/mo</span></div>
           <div class="cp-sub">Starter Site clients</div>
         </div>
         <hr class="cp-div">
@@ -1113,7 +1114,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
         <div class="cp-hd">
           <div class="cp-tier">Standard Care</div>
           <div class="cp-name">Maintained &amp; monitored</div>
-          <div class="cp-price-row"><span class="cp-amt">$49</span><span class="cp-per">/mo</span></div>
+          <div class="cp-price-row"><span class="cp-amt">$129</span><span class="cp-per">/mo</span></div>
           <div class="cp-sub">Growth Site clients</div>
         </div>
         <hr class="cp-div">
@@ -1135,7 +1136,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
         <div class="cp-hd">
           <div class="cp-tier">Premium Care</div>
           <div class="cp-name">Maintained &amp; reviewed</div>
-          <div class="cp-price-row"><span class="cp-amt">$99</span><span class="cp-per">/mo</span></div>
+          <div class="cp-price-row"><span class="cp-amt">$199</span><span class="cp-per">/mo</span></div>
           <div class="cp-sub">Premium Site clients</div>
         </div>
         <hr class="cp-div">
@@ -1279,7 +1280,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
 <!-- AUDIT MODAL -->
 <div class="mo" id="m-audit">
   <div class="mb">
-    <div class="mh"><div><div class="mh-title">Free Site Audit</div><div class="mh-sub">5 quick questions &mdash; get your score instantly</div></div><button class="mc-btn" onclick="closeM('audit')">&#10005;</button></div>
+    <div class="mh"><div><div class="mh-title">Free Site Audit</div><div class="mh-sub">5 quick questions &mdash; get your score instantly</div></div><div style="display:flex;align-items:center;gap:6px"><button class="mc-restart" onclick="restartModal('a')" title="Start Over">&#8635; Start Over</button><button class="mc-btn" onclick="closeM('audit')">&#10005;</button></div></div>
     <div class="mbody">
       <div class="mprog"><div class="mp act" id="ap1"></div><div class="mp" id="ap2"></div><div class="mp" id="ap3"></div><div class="mp" id="ap4"></div><div class="mp" id="ap5"></div></div>
       <div class="ms on" id="a1"><div class="ms-ey">Step 1 of 5</div><div class="ms-q">What type of service business do you run?</div><div class="ms-opts">
@@ -1287,7 +1288,8 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
         <div class="ms-opt" onclick="aNext(1,this)"><span class="ms-opt-ico">&#9986;&#65039;</span><div><strong>Beauty &amp; Wellness</strong><span>Salon, spa, barber, esthetics, fitness</span></div></div>
         <div class="ms-opt" onclick="aNext(1,this)"><span class="ms-opt-ico">&#127968;</span><div><strong>Home Services</strong><span>Cleaning, landscaping, pest control, moving</span></div></div>
         <div class="ms-opt" onclick="aNext(1,this)"><span class="ms-opt-ico">&#128062;</span><div><strong>Pet Care</strong><span>Grooming, boarding, training, vet</span></div></div>
-        <div class="ms-opt" onclick="aNext(1,this)"><span class="ms-opt-ico">&#127775;</span><div><strong>Other</strong><span>Any other service business</span></div></div>
+        <div class="ms-opt" id="a1-other-opt" onclick="aSelectOther('a',this)"><span class="ms-opt-ico">&#127775;</span><div><strong>Other</strong><span>Any other service business</span></div></div>
+        <div class="other-input-wrap" id="a-other-wrap" style="display:none"><input class="mi" id="a-other-text" placeholder="Tell us about your business..." style="margin-top:6px"><button class="mn-next" style="margin-top:8px;width:100%" onclick="aNextOther()">Continue &rarr;</button></div>
       </div></div>
       <div class="ms" id="a2"><div class="ms-ey">Step 2 of 5</div><div class="ms-q">Do you currently have a website?</div><div class="ms-opts">
         <div class="ms-opt" onclick="aNext(2,this)"><span class="ms-opt-ico">&#9989;</span><div><strong>Yes, and it's getting me leads</strong><span>I want to improve it</span></div></div>
@@ -1345,7 +1347,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
 <!-- NEW SITE MODAL -->
 <div class="mo" id="m-new">
   <div class="mb">
-    <div class="mh"><div><div class="mh-title">Start My Project</div><div class="mh-sub">Tell us about your business &mdash; we'll recommend the right package</div></div><button class="mc-btn" onclick="closeM('new')">&#10005;</button></div>
+    <div class="mh"><div><div class="mh-title">Start My Project</div><div class="mh-sub">Tell us about your business &mdash; we'll recommend the right package</div></div><div style="display:flex;align-items:center;gap:6px"><button class="mc-restart" onclick="restartModal('n')" title="Start Over">&#8635; Start Over</button><button class="mc-btn" onclick="closeM('new')">&#10005;</button></div></div>
     <div class="mbody">
       <div class="mprog"><div class="mp act" id="np1"></div><div class="mp" id="np2"></div><div class="mp" id="np3"></div><div class="mp" id="np4"></div><div class="mp" id="np5"></div></div>
       <div class="ms on" id="n1"><div class="ms-ey">Step 1 of 5</div><div class="ms-q">What type of service business do you run?</div><div class="ms-opts">
@@ -1353,7 +1355,8 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
         <div class="ms-opt" onclick="nNext(1,this)"><span class="ms-opt-ico">&#9986;&#65039;</span><div><strong>Beauty &amp; Wellness</strong><span>Salon, spa, barber, esthetics, fitness</span></div></div>
         <div class="ms-opt" onclick="nNext(1,this)"><span class="ms-opt-ico">&#127968;</span><div><strong>Home Services</strong><span>Cleaning, landscaping, pest control, moving</span></div></div>
         <div class="ms-opt" onclick="nNext(1,this)"><span class="ms-opt-ico">&#128062;</span><div><strong>Pet Care</strong><span>Grooming, boarding, training, vet</span></div></div>
-        <div class="ms-opt" onclick="nNext(1,this)"><span class="ms-opt-ico">&#127775;</span><div><strong>Other</strong><span>Any other service business</span></div></div>
+        <div class="ms-opt" id="n1-other-opt" onclick="nSelectOther(this)"><span class="ms-opt-ico">&#127775;</span><div><strong>Other</strong><span>Any other service business</span></div></div>
+        <div class="other-input-wrap" id="n-other-wrap" style="display:none"><input class="mi" id="n-other-text" placeholder="Tell us about your business..." style="margin-top:6px"><button class="mn-next" style="margin-top:8px;width:100%" onclick="nNextOther()">Continue &rarr;</button></div>
       </div></div>
       <div class="ms" id="n2"><div class="ms-ey">Step 2 of 5</div><div class="ms-q">What's your main goal for the new site?</div><div class="ms-opts">
         <div class="ms-opt" onclick="nNext(2,this)"><span class="ms-opt-ico">&#128269;</span><div><strong>Get found on Google</strong><span>Show up when locals search for my service</span></div></div>
@@ -1432,7 +1435,7 @@ footer{background:var(--ink);color:#f0ede6;padding:48px}
 const PF_DEMOS = [
   {
     slug: 'crown-house-barbers',
-    file: 'crown-house-barbers.html',
+    file: '/examples/crown-house-barbers.html',
     demoUrl: '/examples/crown-house-barbers',
     industry: 'Barbershop',
     color: '#1a1410',
@@ -1445,7 +1448,7 @@ const PF_DEMOS = [
   },
   {
     slug: 'brightline-electric',
-    file: 'brightline-electric.html',
+    file: '/examples/brightline-electric.html',
     demoUrl: '/examples/brightline-electric',
     industry: 'Electrician',
     color: '#0d1720',
@@ -1458,7 +1461,7 @@ const PF_DEMOS = [
   },
   {
     slug: 'desert-bloom-medspa',
-    file: 'desert-bloom-medspa.html',
+    file: '/examples/desert-bloom-medspa.html',
     demoUrl: '/examples/desert-bloom-medspa',
     industry: 'Med Spa',
     color: '#f8f0e8',
@@ -1471,7 +1474,7 @@ const PF_DEMOS = [
   },
   {
     slug: 'green-horizon-landscaping',
-    file: 'green-horizon-landscaping.html',
+    file: '/examples/green-horizon-landscaping.html',
     demoUrl: '/examples/green-horizon-landscaping',
     industry: 'Landscaping',
     color: '#162412',
@@ -1618,6 +1621,52 @@ function openM(type) {
 function closeM(type) {
   document.getElementById('m-' + type).classList.remove('open');
   document.body.style.overflow = '';
+}
+function restartModal(prefix) {
+  // Reset all steps to hidden, show step 1
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById(prefix + i);
+    if (el) { el.classList.remove('on'); el.querySelectorAll('.ms-opt').forEach(o => o.classList.remove('sel')); }
+  }
+  document.getElementById(prefix + '1')?.classList.add('on');
+  if (prefix === 'a') { aStep = 1; document.getElementById('a-succ')?.classList.remove('show'); }
+  else { nStep = 1; document.getElementById('n-succ')?.classList.remove('show'); }
+  updateProg(prefix, 1, 5);
+  // Reset Other input
+  const wrap = document.getElementById(prefix === 'a' ? 'a-other-wrap' : 'n-other-wrap');
+  if (wrap) wrap.style.display = 'none';
+}
+function aSelectOther(prefix, el) {
+  el.closest('.ms-opts').querySelectorAll('.ms-opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  const wrap = document.getElementById('a-other-wrap');
+  if (wrap) wrap.style.display = 'block';
+  document.getElementById('a-other-text')?.focus();
+}
+function aNextOther() {
+  const val = document.getElementById('a-other-text')?.value?.trim();
+  if (!val) { document.getElementById('a-other-text').style.outline = '2px solid red'; return; }
+  aData.step1 = val;
+  document.getElementById('a-other-wrap').style.display = 'none';
+  document.getElementById('a1').classList.remove('on');
+  document.getElementById('a2').classList.add('on');
+  aStep = 2; updateProg('a', 2, 5);
+}
+function nSelectOther(el) {
+  el.closest('.ms-opts').querySelectorAll('.ms-opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  const wrap = document.getElementById('n-other-wrap');
+  if (wrap) wrap.style.display = 'block';
+  document.getElementById('n-other-text')?.focus();
+}
+function nNextOther() {
+  const val = document.getElementById('n-other-text')?.value?.trim();
+  if (!val) { document.getElementById('n-other-text').style.outline = '2px solid red'; return; }
+  nData.step1 = val;
+  document.getElementById('n-other-wrap').style.display = 'none';
+  document.getElementById('n1').classList.remove('on');
+  document.getElementById('n2').classList.add('on');
+  nStep = 2; updateProg('n', 2, 5);
 }
 
 function aNext(step, el) {
