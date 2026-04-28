@@ -757,7 +757,8 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
     <a href="/blog">Blog</a>
   </div>
   <div class="nav-acts">
-    <button class="btn-ng" onclick="openM('audit')">Free Audit</button>
+    <button class="btn-ng" onclick="openM('demo')">Book a Demo</button>
+    <button class="btn-ng" style="background:var(--al);color:var(--acc);border:1px solid var(--am)" onclick="openM('audit')">Free Audit</button>
     <button class="btn-nf" onclick="openM('new')">Get Started</button>
   </div>
 </nav>
@@ -770,7 +771,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
     <p class="hero-sub rv d2">ServiceFlow builds websites and automation systems for service businesses &mdash; from hair salons and spas to electricians and landscapers. Get found, get booked, and get paid without the back-and-forth.</p>
     <div class="hero-ctas rv d2">
       <button class="btn-f" onclick="openM('audit')">Get Your Free Site Audit</button>
-      <button class="btn-o" onclick="document.getElementById('examples').scrollIntoView({behavior:'smooth'})">See Examples</button>
+      <button class="btn-o" onclick="openM('demo')">Book a Demo Call</button>
     </div>
     <div class="hero-proof rv d3">
       <div class="sp-avs">
@@ -824,7 +825,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
       <div style="font-size:2.5rem;margin-bottom:16px">🎯</div>
       <div style="font-family:var(--hf);font-size:1.15rem;font-weight:700;color:#f0ede6;margin-bottom:8px">Want to see your industry?</div>
       <p style="font-size:12px;color:rgba(240,237,230,0.5);line-height:1.7;margin-bottom:20px">Book a free call and we'll walk you through a live demo built for your specific trade — concrete, electric, landscaping, salon, or anything else.</p>
-      <button onclick="openM('audit')" style="padding:10px 22px;border-radius:100px;background:var(--acc);border:none;color:#fff;font-family:var(--bf);font-size:13px;font-weight:600;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Book a Free Demo Call &rarr;</button>
+      <button onclick="openM('demo')" style="padding:10px 22px;border-radius:100px;background:var(--acc);border:none;color:#fff;font-family:var(--bf);font-size:13px;font-weight:600;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Book a Free Demo Call &rarr;</button>
     </div>
   </div>
   <!-- Mobile: stack -->
@@ -1325,6 +1326,116 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
   </div>
 </footer>
 
+<!-- DEMO MODAL -->
+<div class="mo" id="m-demo">
+  <div class="mb">
+    <div class="mh">
+      <div>
+        <div class="mh-title">Book a Demo Call</div>
+        <div class="mh-sub">4 quick questions &mdash; so your call is never a cold start</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button class="mc-restart" onclick="restartModal('dm')" title="Start Over">&#8635; Start Over</button>
+        <button class="mc-btn" onclick="closeM('demo')">&#10005;</button>
+      </div>
+    </div>
+    <div class="mbody">
+      <div class="mprog">
+        <div class="mp act" id="dmp1"></div>
+        <div class="mp" id="dmp2"></div>
+        <div class="mp" id="dmp3"></div>
+        <div class="mp" id="dmp4"></div>
+      </div>
+
+      <!-- Step 1 — Industry -->
+      <div class="ms on" id="dm1">
+        <div class="ms-ey">Step 1 of 4</div>
+        <div class="ms-q">What type of service business do you run?</div>
+        <div class="ms-opts">
+          <div class="ms-opt" onclick="dmNext(1,this)"><span class="ms-opt-ico">&#128268;</span><div><strong>Trades</strong><span>Electric, plumbing, HVAC, concrete, roofing</span></div></div>
+          <div class="ms-opt" onclick="dmNext(1,this)"><span class="ms-opt-ico">&#9986;&#65039;</span><div><strong>Beauty &amp; Wellness</strong><span>Salon, spa, barber, esthetics, fitness</span></div></div>
+          <div class="ms-opt" onclick="dmNext(1,this)"><span class="ms-opt-ico">&#127968;</span><div><strong>Home Services</strong><span>Cleaning, landscaping, pest control, moving</span></div></div>
+          <div class="ms-opt" onclick="dmNext(1,this)"><span class="ms-opt-ico">&#128062;</span><div><strong>Pet Care</strong><span>Grooming, boarding, training, vet</span></div></div>
+          <div class="ms-opt" id="dm1-other-opt" onclick="dmSelectOther(this)"><span class="ms-opt-ico">&#127775;</span><div><strong>Other</strong><span>Any other service business</span></div></div>
+          <div class="other-input-wrap" id="dm-other-wrap" style="display:none">
+            <input class="mi" id="dm-other-text" placeholder="Tell us about your business..." style="margin-top:6px">
+            <button class="mn-next" style="margin-top:8px;width:100%" onclick="dmNextOther()">Continue &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 — Pain points -->
+      <div class="ms" id="dm2">
+        <div class="ms-ey">Step 2 of 4</div>
+        <div class="ms-q">Where is your biggest pain point right now?</div>
+        <div class="ms-opts">
+          <div class="ms-opt" onclick="dmNext(2,this)"><span class="ms-opt-ico">&#128269;</span><div><strong>Not showing up on Google</strong><span>Clients can't find me in local searches</span></div></div>
+          <div class="ms-opt" onclick="dmNext(2,this)"><span class="ms-opt-ico">&#128241;</span><div><strong>Too much back-and-forth</strong><span>Wasting time on estimates and phone calls</span></div></div>
+          <div class="ms-opt" onclick="dmNext(2,this)"><span class="ms-opt-ico">&#128197;</span><div><strong>No booking or follow-up system</strong><span>Everything's manual, leads fall through</span></div></div>
+          <div class="ms-opt" onclick="dmNext(2,this)"><span class="ms-opt-ico">&#11088;</span><div><strong>Not enough reviews or credibility</strong><span>Competitors look more established online</span></div></div>
+          <div class="ms-opt" onclick="dmNext(2,this)"><span class="ms-opt-ico">&#128176;</span><div><strong>Site doesn't convert visitors</strong><span>Traffic exists but no one contacts me</span></div></div>
+          <div class="ms-opt" onclick="dmNext(2,this)"><span class="ms-opt-ico">&#128640;</span><div><strong>Starting from scratch</strong><span>No site yet, need to build everything</span></div></div>
+        </div>
+        <div class="mn"><button class="mn-back" onclick="dmBack(2)">&#8592; Back</button></div>
+      </div>
+
+      <!-- Step 3 — Vision + Timeline -->
+      <div class="ms" id="dm3">
+        <div class="ms-ey">Step 3 of 4</div>
+        <div class="ms-q">If everything was set up perfectly — what would that look like?</div>
+        <p style="font-size:12px;color:var(--soft);margin:-6px 0 12px">Give us a picture of your ideal setup. Be as specific or as broad as you want.</p>
+        <div class="fld-grp">
+          <textarea class="mi" id="dm-vision" rows="3" placeholder="e.g. Clients find me on Google, book online, I get a text notification, they get an automatic reminder the day before, and I collect payment before the job..." style="resize:vertical;min-height:90px"></textarea>
+        </div>
+        <div class="fld-grp" style="margin-top:4px">
+          <label class="fld-lbl">What's your timeline?</label>
+          <div class="ms-opts" style="margin-bottom:0">
+            <div class="ms-opt" id="tl-asap" onclick="dmSelectTimeline(this,'ASAP — within 2 weeks')" style="padding:9px 12px"><span class="ms-opt-ico" style="font-size:1rem">&#128293;</span><div><strong>ASAP</strong><span>Within 2 weeks</span></div></div>
+            <div class="ms-opt" id="tl-month" onclick="dmSelectTimeline(this,'1 month')" style="padding:9px 12px"><span class="ms-opt-ico" style="font-size:1rem">&#128337;</span><div><strong>1 month</strong><span>Standard timeline</span></div></div>
+            <div class="ms-opt" id="tl-3mo" onclick="dmSelectTimeline(this,'2–3 months')" style="padding:9px 12px"><span class="ms-opt-ico" style="font-size:1rem">&#128336;</span><div><strong>2&ndash;3 months</strong><span>Planning ahead</span></div></div>
+            <div class="ms-opt" id="tl-explore" onclick="dmSelectTimeline(this,'Just exploring')" style="padding:9px 12px"><span class="ms-opt-ico" style="font-size:1rem">&#128330;</span><div><strong>Just exploring</strong><span>No rush yet</span></div></div>
+          </div>
+        </div>
+        <div class="mn" style="margin-top:12px">
+          <button class="mn-back" onclick="dmBack(3)">&#8592; Back</button>
+          <button class="mn-next" id="dm3-next" onclick="dmNext(3)" disabled style="opacity:0.45">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 4 — Contact info -->
+      <div class="ms" id="dm4">
+        <div class="ms-ey">Step 4 of 4</div>
+        <div class="ms-q">Last step &mdash; how do we reach you?</div>
+        <div class="req-note">* Required fields</div>
+        <div class="mi-row">
+          <div class="fld-grp"><label class="fld-lbl req-lbl">First Name</label><input class="mi" id="dm-fname" placeholder="First name"></div>
+          <div class="fld-grp"><label class="fld-lbl req-lbl">Last Name</label><input class="mi" id="dm-lname" placeholder="Last name"></div>
+        </div>
+        <div class="fld-grp"><label class="fld-lbl req-lbl">Email</label><input class="mi" id="dm-email" placeholder="your@email.com" type="email"></div>
+        <div class="fld-grp"><label class="fld-lbl req-lbl">Phone</label><input class="mi" id="dm-phone" placeholder="(555) 000-0000" type="tel"></div>
+        <div class="fld-grp"><label class="fld-lbl">Business Name</label><input class="mi" id="dm-biz" placeholder="Your business name"></div>
+        <div class="ms-note" style="margin-top:4px">We'll review your answers before the call so we come prepared &mdash; no cold starts, no generic pitches.</div>
+        <div class="fld-err" id="dm-err" style="margin-bottom:8px"></div>
+        <div class="mn"><button class="mn-back" onclick="dmBack(4)">&#8592; Back</button><button class="mn-next" onclick="dmSubmit()">Book My Demo Call &rarr;</button></div>
+      </div>
+
+      <!-- Success: inline calendar -->
+      <div class="succ" id="dm-succ">
+        <div class="succ-check">&#10003;</div>
+        <h3 class="succ-ti">You're all set &mdash; pick a time below.</h3>
+        <p class="succ-su">We've got your info and will come prepared with examples specific to your industry and pain points. No generic pitch &mdash; just a focused look at what we'd build for you.</p>
+        <div class="cal-wrap">
+          <div class="cal-label">&#128197; Choose Your Demo Call Time</div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/contact-svc-flow/30min?hide_gdpr_banner=1&primary_color=1a6bdb" style="min-width:280px;height:680px"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+        <p class="succ-note">Questions before the call? <a href="mailto:contact@svc-flow.com" style="color:var(--acc)">contact@svc-flow.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- AUDIT MODAL -->
 <div class="mo" id="m-audit">
   <div class="mb">
@@ -1748,14 +1859,109 @@ function closeM(type) {
   document.getElementById('m-' + type).classList.remove('open');
   document.body.style.overflow = '';
 }
+// ── DEMO MODAL ──────────────────────────────────────────────────────────────
+let dmStep = 1;
+let dmData = {};
+let dmTimeline = '';
+
+function dmNext(step, el) {
+  if (el) {
+    el.closest('.ms-opts').querySelectorAll('.ms-opt').forEach(o => o.classList.remove('sel'));
+    el.classList.add('sel');
+    dmData['step' + step] = el.querySelector('strong')?.textContent;
+  }
+  document.getElementById('dm' + step).classList.remove('on');
+  document.getElementById('dm' + (step + 1)).classList.add('on');
+  dmStep = step + 1;
+  updateProg('dm', dmStep, 4);
+}
+function dmBack(step) {
+  document.getElementById('dm' + step).classList.remove('on');
+  document.getElementById('dm' + (step - 1)).classList.add('on');
+  dmStep = step - 1;
+  updateProg('dm', dmStep, 4);
+}
+function dmSelectOther(el) {
+  el.closest('.ms-opts').querySelectorAll('.ms-opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  const wrap = document.getElementById('dm-other-wrap');
+  if (wrap) wrap.style.display = 'block';
+  document.getElementById('dm-other-text')?.focus();
+}
+function dmNextOther() {
+  const val = document.getElementById('dm-other-text')?.value?.trim();
+  if (!val) { document.getElementById('dm-other-text').style.outline = '2px solid red'; return; }
+  dmData.step1 = val;
+  document.getElementById('dm-other-wrap').style.display = 'none';
+  document.getElementById('dm1').classList.remove('on');
+  document.getElementById('dm2').classList.add('on');
+  dmStep = 2; updateProg('dm', 2, 4);
+}
+function dmSelectTimeline(el, val) {
+  document.querySelectorAll('#dm3 .ms-opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  dmTimeline = val;
+  const btn = document.getElementById('dm3-next');
+  if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+}
+function dmSubmit() {
+  const fname = document.getElementById('dm-fname')?.value?.trim();
+  const email = document.getElementById('dm-email')?.value?.trim();
+  const phone = document.getElementById('dm-phone')?.value?.trim();
+  const err   = document.getElementById('dm-err');
+  if (!fname || !email || !phone) {
+    if (err) { err.textContent = 'Please fill in your name, email, and phone.'; err.style.display = 'block'; }
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (err) { err.textContent = 'Please enter a valid email address.'; err.style.display = 'block'; }
+    return;
+  }
+  if (err) err.style.display = 'none';
+  // GA4 event
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'demo_form_complete', { industry: dmData.step1 || '', pain_point: dmData.step2 || '', timeline: dmTimeline });
+  }
+  // Submit to Formspree
+  try {
+    const fd = new FormData();
+    fd.append('_subject', 'New Demo Call Request — ' + (document.getElementById('dm-biz')?.value || fname));
+    fd.append('First Name',    fname);
+    fd.append('Last Name',     document.getElementById('dm-lname')?.value || '');
+    fd.append('Email',         email);
+    fd.append('Phone',         phone);
+    fd.append('Business Name', document.getElementById('dm-biz')?.value || '');
+    fd.append('Industry',      dmData.step1 || '');
+    fd.append('Pain Point',    dmData.step2 || '');
+    fd.append('Vision',        document.getElementById('dm-vision')?.value || '');
+    fd.append('Timeline',      dmTimeline);
+    fd.append('Form Type',     'Demo Call Request');
+    fetch('https://formspree.io/f/xzdylgkk', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+      .catch(err => console.log('Formspree error:', err));
+  } catch(e) { console.log('Submit error:', e); }
+  // Show success + calendar
+  document.getElementById('dm4').classList.remove('on');
+  document.getElementById('dm-succ').classList.add('show');
+}
+
 function restartModal(prefix) {
-  const total = prefix === 'a' ? 6 : 5;
+  const total = prefix === 'a' ? 6 : prefix === 'dm' ? 4 : 5;
   for (let i = 1; i <= total; i++) {
     const el = document.getElementById(prefix + i);
     if (el) { el.classList.remove('on'); el.querySelectorAll('.ms-opt').forEach(o => o.classList.remove('sel')); }
   }
   document.getElementById(prefix + '1')?.classList.add('on');
-  if (prefix === 'a') {
+  if (prefix === 'dm') {
+    dmStep = 1; dmData = {}; dmTimeline = '';
+    document.getElementById('dm-succ')?.classList.remove('show');
+    document.getElementById('dm-other-wrap').style.display = 'none';
+    document.querySelectorAll('#dm3 .ms-opt').forEach(o => o.classList.remove('sel'));
+    const btn = document.getElementById('dm3-next');
+    if (btn) { btn.disabled = true; btn.style.opacity = '0.45'; }
+    const vision = document.getElementById('dm-vision'); if (vision) vision.value = '';
+    const err = document.getElementById('dm-err'); if (err) err.style.display = 'none';
+    updateProg('dm', 1, 4);
+  } else if (prefix === 'a') {
     aStep = 1;
     document.getElementById('a-succ')?.classList.remove('show');
     // Reset sliders
@@ -1947,9 +2153,8 @@ function aSubmit() {
     fd.append('Current Situation',       aData.context || '');
     fd.append('Vision / Perfect Setup',  aData.vision  || '');
     fd.append('Phase Interest',          aData.phases  || '');
-    fd.append('_subject', 'New ServiceFlow Audit Lead: ' + (document.getElementById('a-biz')?.value || ''));
-    // TODO: Replace YOUR_FORM_ID with actual Formspree form ID from formspree.io
-    fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+    fd.append('_subject', 'New Audit Lead — ' + (document.getElementById('a-biz')?.value || 'Unknown Business') + ' | ' + (aData.industry || aData.step1 || ''));
+    fetch('https://formspree.io/f/xzdylgkk', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
       .catch(err => console.log('Formspree error:', err));
   } catch(e) { console.log('Form submit error:', e); }
 }
