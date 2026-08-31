@@ -2,4 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://svc-flow.com/</loc><priority>1.0</priority></url>
   <url><loc>https://svc-flow.com/blog</loc><priority>0.8</priority></url>
+  <url><loc>https://svc-flow.com/sample-report.html</loc><priority>0.5</priority></url>
+  <url><loc>https://svc-flow.com/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://svc-flow.com/terms.html</loc><priority>0.3</priority></url>
 </urlset>
