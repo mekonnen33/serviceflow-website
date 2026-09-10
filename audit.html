@@ -87,6 +87,13 @@
     .footer{border-top:1px solid var(--sf-border);padding:28px 24px;text-align:center;font-size:13px;color:var(--sf-muted);background:var(--sf-surface);transition:background 0.25s,border-color 0.25s}
     .footer a{color:var(--sf-muted);text-decoration:none}
     .footer a:hover{color:var(--sf-gold)}
+
+    .sf-toggle-pill{display:flex;align-items:center;background:var(--sf-surface);border:1px solid var(--sf-border);border-radius:10px;overflow:hidden;transition:background 0.25s,border-color 0.25s}
+    .sf-toggle-pill button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 12px;border:none;cursor:pointer;background:transparent;transition:background 0.2s;font-size:11px;font-weight:600;color:var(--sf-muted);line-height:1;white-space:nowrap}
+    .sf-toggle-pill button .t-icon{font-size:15px}
+    .sf-toggle-pill button.active{background:var(--sf-gold);color:#000}
+    .sf-toggle-pill button:not(.active):hover{background:var(--sf-border)}
+    .sf-toggle-pill .t-div{width:1px;background:var(--sf-border);align-self:stretch}
     @media(max-width:600px){.nav-links .nav-link{display:none}.hero h1{letter-spacing:-1px}.process-steps{grid-template-columns:1fr 1fr;gap:20px}}
   </style>
 </head>
@@ -100,7 +107,11 @@
     <a href="/#packages" class="nav-link">Packages</a>
     <a href="/blog" class="nav-link">Blog</a>
     <a href="/#contact" class="nav-btn ghost">Contact</a>
-    <button class="sf-theme-toggle" onclick="sfToggleTheme()" aria-label="Switch to dark mode"><span class="sf-toggle-icon">🌙</span></button>
+    <div class="sf-toggle-pill">
+      <button id="btn-light" onclick="setTheme('light')"><span class="t-icon">☀️</span><span>Light</span></button>
+      <div class="t-div"></div>
+      <button id="btn-dark" onclick="setTheme('dark')"><span class="t-icon">🌙</span><span>Dark</span></button>
+    </div>
     <button class="nav-btn" onclick="openAuditForm()">Start Free Audit</button>
   </div>
 </nav>
@@ -226,26 +237,20 @@ function openAuditForm() {
   window.location.href = '/#audit-form';
 }
 
-function sfToggleTheme() {
-  var html = document.documentElement;
-  var isDark = html.getAttribute('data-theme') === 'dark';
-  if (isDark) {
-    html.removeAttribute('data-theme');
-    localStorage.setItem('sf-theme', 'light');
-  } else {
-    html.setAttribute('data-theme', 'dark');
-    localStorage.setItem('sf-theme', 'dark');
-  }
-  var icon = document.querySelector('.sf-toggle-icon');
-  if (icon) icon.textContent = isDark ? '🌙' : '☀️';
+function setTheme(t) {
+  if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  else document.documentElement.removeAttribute('data-theme');
+  localStorage.setItem('sf-theme', t);
+  updateToggle();
 }
-
-// Set correct icon on load
-(function() {
+function updateToggle() {
   var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  var icon = document.querySelector('.sf-toggle-icon');
-  if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-})();
+  var bl = document.getElementById('btn-light');
+  var bd = document.getElementById('btn-dark');
+  if (bl) bl.classList.toggle('active', !isDark);
+  if (bd) bd.classList.toggle('active', isDark);
+}
+updateToggle();
 </script>
 </body>
 </html>
