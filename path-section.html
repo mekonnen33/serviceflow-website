@@ -1,0 +1,213 @@
+<!-- ═══════════════════════════════════════════════════
+     PHASE 1A: THREE-PATH ROUTING SECTION
+     Insert after .hero section, before #examples
+═══════════════════════════════════════════════════ -->
+<section class="sf-paths" id="get-started">
+  <div class="sf-paths-inner">
+    <p class="sf-paths-label">What Do You Need Help With?</p>
+    <h2 class="sf-paths-title">Choose your path</h2>
+    <p class="sf-paths-sub">We guide you to exactly what you need — no guesswork, no wasted time.</p>
+    <div class="sf-paths-grid">
+
+      <!-- PATH 1: AUDIT -->
+      <a href="/audit" class="sf-path-card" data-path="existing_website" onclick="sfPathClick(this)">
+        <div class="sf-path-icon">🔍</div>
+        <h3 class="sf-path-name">Audit My Website</h3>
+        <p class="sf-path-desc">Find out what may be costing you traffic, leads, and conversions.</p>
+        <ul class="sf-path-bullets">
+          <li>Free website &amp; SEO diagnostic</li>
+          <li>Scores across 8 key categories</li>
+          <li>Specific recommendations — not generic</li>
+          <li>Results within 24 hours</li>
+        </ul>
+        <div class="sf-path-cta">Get My Free Audit →</div>
+        <div class="sf-path-note">Already have a site · No obligation</div>
+      </a>
+
+      <!-- PATH 2: BUILD -->
+      <a href="/build" class="sf-path-card sf-path-card--featured" data-path="new_website" onclick="sfPathClick(this)">
+        <div class="sf-path-featured-badge">Most Popular</div>
+        <div class="sf-path-icon">🏗️</div>
+        <h3 class="sf-path-name">Build My Website</h3>
+        <p class="sf-path-desc">Get a professional website built to turn visitors into customers.</p>
+        <ul class="sf-path-bullets">
+          <li>Packages starting at $799</li>
+          <li>Live in 2–3 weeks</li>
+          <li>Built for your specific industry</li>
+          <li>Optimized for local search from day one</li>
+        </ul>
+        <div class="sf-path-cta">Start My Project →</div>
+        <div class="sf-path-note">No commitment · See pricing first</div>
+      </a>
+
+      <!-- PATH 3: GROW -->
+      <a href="/grow" class="sf-path-card" data-path="growth_automation" onclick="sfPathClick(this)">
+        <div class="sf-path-icon">📈</div>
+        <h3 class="sf-path-name">Grow &amp; Automate</h3>
+        <p class="sf-path-desc">Improve follow-up, booking, reviews, and customer acquisition.</p>
+        <ul class="sf-path-bullets">
+          <li>Booking, quote, and review automation</li>
+          <li>CRM and lead follow-up systems</li>
+          <li>Google Ads and local SEO</li>
+          <li>Month-to-month — no contracts</li>
+        </ul>
+        <div class="sf-path-cta">See What We'd Build →</div>
+        <div class="sf-path-note">Already have a site you like</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ── PATH SECTION STYLES ── */
+.sf-paths {
+  padding: 72px 24px 80px;
+  background: #0f0f0f;
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+}
+.sf-paths-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.sf-paths-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f5a623;
+  margin-bottom: 10px;
+}
+.sf-paths-title {
+  text-align: center;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+}
+.sf-paths-sub {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 48px;
+}
+.sf-paths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.sf-path-card {
+  background: #161616;
+  border: 1px solid #252525;
+  border-radius: 16px;
+  padding: 32px 26px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.sf-path-card:hover {
+  border-color: #f5a623;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(245,166,35,0.1);
+}
+.sf-path-card--featured {
+  border-color: #f5a623;
+  background: rgba(245,166,35,0.04);
+}
+.sf-path-featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f5a623;
+  color: #000;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.sf-path-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+.sf-path-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.sf-path-desc {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+.sf-path-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.sf-path-bullets li {
+  font-size: 13px;
+  color: #999;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+.sf-path-bullets li::before {
+  content: "✓";
+  color: #22c55e;
+  font-size: 12px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.sf-path-cta {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f5a623;
+  margin-bottom: 8px;
+}
+.sf-path-card:hover .sf-path-cta {
+  text-decoration: underline;
+}
+.sf-path-note {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .sf-paths-grid { grid-template-columns: 1fr 1fr; }
+  .sf-path-card:last-child { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .sf-paths-grid { grid-template-columns: 1fr; }
+  .sf-path-card:last-child { grid-column: span 1; }
+  .sf-paths { padding: 52px 20px 60px; }
+}
+</style>
+
+<script>
+function sfPathClick(el) {
+  var path = el.getAttribute('data-path');
+  if (window.dataLayer) {
+    window.dataLayer.push({ event: 'path_selected', path: path, source: 'homepage' });
+  }
+}
+</script>
