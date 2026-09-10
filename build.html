@@ -122,16 +122,16 @@
 
 <nav class="nav">
   <a href="/" class="nav-logo">Service<span>Flow</span></a>
+  <div class="sf-toggle-pill">
+    <button id="btn-light" onclick="setTheme('light')"><span class="t-icon">☀️</span><span>Light</span></button>
+    <div class="t-div"></div>
+    <button id="btn-dark" onclick="setTheme('dark')"><span class="t-icon">🌙</span><span>Dark</span></button>
+  </div>
   <div class="nav-links">
     <a href="/#examples" class="nav-link">Examples</a>
     <a href="/#packages" class="nav-link">Packages</a>
     <a href="/blog" class="nav-link">Blog</a>
     <a href="/#contact" class="nav-btn ghost">Contact</a>
-    <div class="sf-toggle-pill">
-      <button id="btn-light" onclick="setTheme('light')"><span class="t-icon">☀️</span><span>Light</span></button>
-      <div class="t-div"></div>
-      <button id="btn-dark" onclick="setTheme('dark')"><span class="t-icon">🌙</span><span>Dark</span></button>
-    </div>
     <button class="nav-btn" onclick="openBuildForm()">Start My Project</button>
   </div>
 </nav>
