@@ -6,270 +6,93 @@
   <title>Free Website Audit for Service Businesses — ServiceFlow</title>
   <meta name="description" content="Find out what's costing you leads, traffic, and conversions. Get a free website and SEO audit from ServiceFlow — built for service businesses." />
   <link rel="canonical" href="https://svc-flow.com/audit" />
-
-  <!-- GTM -->
+  <script>(function(){var s=localStorage.getItem('sf-theme');if(s==='dark')document.documentElement.setAttribute('data-theme','dark');})()</script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K7KX8H3R');</script>
-
   <style>
-    /* ── Design tokens (match svc-flow.com exactly) ── */
-    :root {
-      --sf-black: #0a0a0a;
-      --sf-dark: #111111;
-      --sf-gray: #1a1a1a;
-      --sf-border: #2a2a2a;
-      --sf-text: #e8e8e8;
-      --sf-muted: #888;
-      --sf-gold: #f5a623;
-      --sf-gold-dark: #d4891a;
-      --sf-white: #ffffff;
-      --sf-green: #22c55e;
-      --sf-blue: #3b82f6;
-      --radius: 10px;
-      --radius-lg: 16px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--sf-black);
-      color: var(--sf-text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* ── NAV (matches svc-flow.com) ── */
-    .nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--sf-border);
-      padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
-    }
-    .nav-logo {
-      font-size: 18px; font-weight: 700;
-      color: var(--sf-white); text-decoration: none;
-      letter-spacing: -0.3px;
-    }
-    .nav-logo span { color: var(--sf-gold); }
-    .nav-links {
-      display: flex; align-items: center; gap: 8px;
-    }
-    .nav-link {
-      color: var(--sf-muted); text-decoration: none; font-size: 14px;
-      padding: 6px 12px; border-radius: 6px; transition: color 0.2s;
-    }
-    .nav-link:hover { color: var(--sf-white); }
-    .nav-btn {
-      background: var(--sf-gold); color: var(--sf-black);
-      font-size: 13px; font-weight: 700;
-      padding: 8px 16px; border-radius: 8px;
-      text-decoration: none; border: none; cursor: pointer;
-      transition: background 0.2s; white-space: nowrap;
-    }
-    .nav-btn:hover { background: var(--sf-gold-dark); }
-    .nav-btn.ghost {
-      background: transparent; color: var(--sf-text);
-      border: 1px solid var(--sf-border);
-    }
-    .nav-btn.ghost:hover { border-color: var(--sf-gold); color: var(--sf-gold); }
-
-    /* ── BACK CRUMB ── */
-    .back-crumb {
-      padding: 16px 24px 0;
-      max-width: 760px; margin: 0 auto;
-    }
-    .back-link {
-      color: var(--sf-muted); text-decoration: none; font-size: 13px;
-      display: inline-flex; align-items: center; gap: 6px;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--sf-gold); }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 56px 24px 48px;
-      max-width: 760px; margin: 0 auto; text-align: center;
-    }
-    .hero-path-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3);
-      color: var(--sf-gold); font-size: 12px; font-weight: 600;
-      padding: 5px 14px; border-radius: 20px; margin-bottom: 24px;
-      letter-spacing: 0.5px; text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 52px);
-      font-weight: 800; line-height: 1.12;
-      letter-spacing: -1.5px; margin-bottom: 18px;
-      color: var(--sf-white);
-    }
-    .hero h1 em { font-style: normal; color: var(--sf-gold); }
-    .hero p {
-      font-size: 18px; color: var(--sf-muted);
-      max-width: 540px; margin: 0 auto 36px;
-      line-height: 1.65;
-    }
-
-    /* ── TRUST BAR ── */
-    .trust-bar {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 24px;
-      padding: 0 24px 48px;
-      max-width: 680px; margin: 0 auto;
-    }
-    .trust-item {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; color: var(--sf-muted);
-    }
-    .trust-item-icon { font-size: 15px; }
-    .trust-item strong { color: var(--sf-text); }
-
-    /* ── WHAT YOU GET ── */
-    .what-you-get {
-      background: var(--sf-dark);
-      border-top: 1px solid var(--sf-border);
-      border-bottom: 1px solid var(--sf-border);
-      padding: 56px 24px;
-    }
-    .what-you-get-inner {
-      max-width: 900px; margin: 0 auto;
-    }
-    .section-label {
-      text-align: center; font-size: 12px; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--sf-gold); margin-bottom: 12px;
-    }
-    .section-title {
-      text-align: center; font-size: 28px; font-weight: 700;
-      color: var(--sf-white); margin-bottom: 40px; letter-spacing: -0.5px;
-    }
-    .audit-categories {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-    .audit-cat {
-      background: var(--sf-gray); border: 1px solid var(--sf-border);
-      border-radius: var(--radius-lg); padding: 22px 20px;
-    }
-    .audit-cat-icon { font-size: 22px; margin-bottom: 10px; }
-    .audit-cat h3 {
-      font-size: 15px; font-weight: 700; color: var(--sf-white);
-      margin-bottom: 8px;
-    }
-    .audit-cat ul {
-      list-style: none; display: flex; flex-direction: column; gap: 5px;
-    }
-    .audit-cat li {
-      font-size: 13px; color: var(--sf-muted);
-      display: flex; align-items: flex-start; gap: 7px;
-    }
-    .audit-cat li::before { content: "✓"; color: var(--sf-green); flex-shrink: 0; font-size: 12px; margin-top: 2px; }
-
-    /* ── PROCESS ── */
-    .process {
-      padding: 64px 24px;
-      max-width: 860px; margin: 0 auto;
-    }
-    .process-steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px; margin-top: 40px;
-    }
-    .process-step { text-align: center; }
-    .step-num {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: rgba(245,166,35,0.12); border: 2px solid var(--sf-gold);
-      color: var(--sf-gold); font-size: 16px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 14px;
-    }
-    .process-step h3 { font-size: 15px; font-weight: 700; color: var(--sf-white); margin-bottom: 6px; }
-    .process-step p { font-size: 13px; color: var(--sf-muted); line-height: 1.55; }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background: var(--sf-dark); border-top: 1px solid var(--sf-border);
-      padding: 64px 24px;
-      text-align: center;
-    }
-    .cta-section h2 {
-      font-size: 30px; font-weight: 800; color: var(--sf-white);
-      margin-bottom: 12px; letter-spacing: -0.5px;
-    }
-    .cta-section p { font-size: 16px; color: var(--sf-muted); margin-bottom: 32px; }
-    .cta-main {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--sf-gold); color: var(--sf-black);
-      font-size: 16px; font-weight: 700;
-      padding: 16px 32px; border-radius: var(--radius);
-      border: none; cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      text-decoration: none;
-    }
-    .cta-main:hover { background: var(--sf-gold-dark); transform: translateY(-1px); }
-    .cta-secondary {
-      display: block; margin-top: 14px;
-      font-size: 13px; color: var(--sf-muted); text-decoration: none;
-    }
-    .cta-secondary:hover { color: var(--sf-gold); }
-
-    /* ── PATH SWITCHER (bottom) ── */
-    .path-switcher {
-      padding: 56px 24px;
-      max-width: 860px; margin: 0 auto;
-      border-top: 1px solid var(--sf-border);
-    }
-    .path-switcher h3 {
-      font-size: 16px; font-weight: 700; color: var(--sf-muted);
-      margin-bottom: 20px; text-align: center;
-    }
-    .path-cards {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-    }
-    .path-card {
-      background: var(--sf-gray); border: 1px solid var(--sf-border);
-      border-radius: var(--radius-lg); padding: 20px;
-      text-decoration: none; transition: border-color 0.2s, transform 0.15s;
-      display: block;
-    }
-    .path-card:hover { border-color: var(--sf-gold); transform: translateY(-2px); }
-    .path-card.active { border-color: var(--sf-gold); background: rgba(245,166,35,0.06); }
-    .path-card-icon { font-size: 24px; margin-bottom: 10px; }
-    .path-card h4 { font-size: 14px; font-weight: 700; color: var(--sf-white); margin-bottom: 4px; }
-    .path-card p { font-size: 12px; color: var(--sf-muted); line-height: 1.5; }
-    .path-card .path-badge {
-      display: inline-block; margin-top: 8px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
-      background: rgba(245,166,35,0.15); color: var(--sf-gold);
-      padding: 2px 8px; border-radius: 10px; text-transform: uppercase;
-    }
-
-    /* ── FOOTER ── */
-    .footer {
-      border-top: 1px solid var(--sf-border);
-      padding: 28px 24px; text-align: center;
-      font-size: 13px; color: var(--sf-muted);
-    }
-    .footer a { color: var(--sf-muted); text-decoration: none; }
-    .footer a:hover { color: var(--sf-gold); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .nav-links .nav-link { display: none; }
-      .trust-bar { gap: 14px; }
-      .hero h1 { letter-spacing: -1px; }
-    }
+    :root{--sf-bg:#f8f5f0;--sf-surface:#f0ece6;--sf-card:#ffffff;--sf-border:#e0d8cf;--sf-text:#1a1612;--sf-muted:#6b6560;--sf-gold:#f5a623;--sf-gold-dk:#d4891a;--sf-navy:#1e3a5f;--sf-green:#16a34a;--sf-white:#ffffff;--sf-shadow:0 1px 4px rgba(0,0,0,0.07);--radius:10px;--radius-lg:16px}
+    [data-theme="dark"]{--sf-bg:#0a0a0a;--sf-surface:#111111;--sf-card:#1a1a1a;--sf-border:#252525;--sf-text:#e8e8e8;--sf-muted:#777;--sf-navy:#f5a623;--sf-green:#22c55e;--sf-shadow:0 1px 4px rgba(0,0,0,0.4)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--sf-bg);color:var(--sf-text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.6;min-height:100vh;transition:background 0.25s,color 0.25s}
+    .nav{position:sticky;top:0;z-index:100;background:rgba(248,245,240,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--sf-border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;transition:background 0.25s,border-color 0.25s}
+    [data-theme="dark"] .nav{background:rgba(10,10,10,0.96)}
+    .nav-logo{font-size:18px;font-weight:800;color:var(--sf-navy);text-decoration:none;letter-spacing:-0.3px;transition:color 0.25s}
+    .nav-logo span{color:var(--sf-gold)}
+    .nav-links{display:flex;align-items:center;gap:6px}
+    .nav-link{color:var(--sf-muted);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px;transition:color 0.2s}
+    .nav-link:hover{color:var(--sf-text)}
+    .nav-btn{background:var(--sf-gold);color:#000;font-size:13px;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s;white-space:nowrap}
+    .nav-btn:hover{background:var(--sf-gold-dk)}
+    .nav-btn.ghost{background:transparent;color:var(--sf-text);border:1px solid var(--sf-border)}
+    .nav-btn.ghost:hover{border-color:var(--sf-gold);color:var(--sf-gold)}
+    .sf-theme-toggle{background:transparent;border:1px solid var(--sf-border);border-radius:8px;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:border-color 0.2s;flex-shrink:0}
+    .sf-theme-toggle:hover{border-color:var(--sf-gold)}
+    .back-crumb{padding:16px 24px 0;max-width:760px;margin:0 auto}
+    .back-link{color:var(--sf-muted);text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s}
+    .back-link:hover{color:var(--sf-gold)}
+    .hero{padding:56px 24px 48px;max-width:760px;margin:0 auto;text-align:center}
+    .hero-path-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(30,58,95,0.08);border:1px solid rgba(30,58,95,0.18);color:var(--sf-navy);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:24px;letter-spacing:0.5px;text-transform:uppercase;transition:all 0.25s}
+    [data-theme="dark"] .hero-path-badge{background:rgba(245,166,35,0.12);border-color:rgba(245,166,35,0.3);color:var(--sf-gold)}
+    .hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.12;letter-spacing:-1.5px;margin-bottom:18px;color:var(--sf-navy);transition:color 0.25s}
+    [data-theme="dark"] .hero h1{color:var(--sf-text)}
+    .hero h1 em{font-style:normal;color:var(--sf-gold)}
+    .hero p{font-size:18px;color:var(--sf-muted);max-width:540px;margin:0 auto 36px;line-height:1.65}
+    .cta-main{display:inline-flex;align-items:center;gap:8px;background:var(--sf-gold);color:#000;font-size:16px;font-weight:700;padding:16px 32px;border-radius:var(--radius);border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;text-decoration:none}
+    .cta-main:hover{background:var(--sf-gold-dk);transform:translateY(-1px)}
+    .cta-secondary{display:block;margin-top:14px;font-size:13px;color:var(--sf-muted);text-decoration:none}
+    .cta-secondary:hover{color:var(--sf-gold)}
+    .trust-bar{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;padding:0 24px 48px;max-width:680px;margin:0 auto}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--sf-muted)}
+    .trust-item strong{color:var(--sf-navy);font-weight:600;transition:color 0.25s}
+    [data-theme="dark"] .trust-item strong{color:var(--sf-text)}
+    .what-you-get{background:var(--sf-surface);border-top:1px solid var(--sf-border);border-bottom:1px solid var(--sf-border);padding:56px 24px;transition:background 0.25s,border-color 0.25s}
+    .what-you-get-inner{max-width:900px;margin:0 auto}
+    .section-label{text-align:center;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--sf-navy);margin-bottom:12px;transition:color 0.25s}
+    [data-theme="dark"] .section-label{color:var(--sf-gold)}
+    .section-title{text-align:center;font-size:28px;font-weight:700;color:var(--sf-navy);margin-bottom:40px;letter-spacing:-0.5px;transition:color 0.25s}
+    [data-theme="dark"] .section-title{color:var(--sf-text)}
+    .audit-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .audit-cat{background:var(--sf-card);border:1px solid var(--sf-border);border-radius:var(--radius-lg);padding:22px 20px;box-shadow:var(--sf-shadow);transition:background 0.25s,border-color 0.25s}
+    .audit-cat-icon{font-size:22px;margin-bottom:10px}
+    .audit-cat h3{font-size:15px;font-weight:700;color:var(--sf-navy);margin-bottom:8px;transition:color 0.25s}
+    [data-theme="dark"] .audit-cat h3{color:var(--sf-text)}
+    .audit-cat ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+    .audit-cat li{font-size:13px;color:var(--sf-muted);display:flex;align-items:flex-start;gap:7px}
+    .audit-cat li::before{content:"✓";color:var(--sf-green);flex-shrink:0;font-size:12px;margin-top:2px;font-weight:700}
+    .process{padding:64px 24px;max-width:860px;margin:0 auto}
+    .process-steps{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+    .process-step{text-align:center}
+    .step-num{width:42px;height:42px;border-radius:50%;background:var(--sf-gold);color:#000;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:background 0.25s,color 0.25s,border 0.25s}
+    [data-theme="dark"] .step-num{background:rgba(245,166,35,0.12);border:2px solid var(--sf-gold);color:var(--sf-gold)}
+    .process-step h3{font-size:15px;font-weight:700;color:var(--sf-navy);margin-bottom:6px;transition:color 0.25s}
+    [data-theme="dark"] .process-step h3{color:var(--sf-text)}
+    .process-step p{font-size:13px;color:var(--sf-muted);line-height:1.55}
+    .cta-section{background:var(--sf-navy);padding:64px 24px;text-align:center;transition:background 0.25s}
+    [data-theme="dark"] .cta-section{background:var(--sf-surface);border-top:1px solid var(--sf-border)}
+    .cta-section h2{font-size:30px;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-0.5px}
+    [data-theme="dark"] .cta-section h2{color:var(--sf-text)}
+    .cta-section p{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:32px}
+    [data-theme="dark"] .cta-section p{color:var(--sf-muted)}
+    .path-switcher{padding:56px 24px;max-width:860px;margin:0 auto;border-top:1px solid var(--sf-border)}
+    .path-switcher h3{font-size:16px;font-weight:700;color:var(--sf-muted);margin-bottom:20px;text-align:center}
+    .path-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .path-card{background:var(--sf-card);border:1px solid var(--sf-border);border-radius:var(--radius-lg);padding:20px;text-decoration:none;transition:border-color 0.2s,transform 0.15s,background 0.25s;display:block;box-shadow:var(--sf-shadow)}
+    .path-card:hover{border-color:var(--sf-gold);transform:translateY(-2px)}
+    .path-card.active{border-color:var(--sf-gold);background:rgba(245,166,35,0.05)}
+    .path-card-icon{font-size:24px;margin-bottom:10px}
+    .path-card h4{font-size:14px;font-weight:700;color:var(--sf-navy);margin-bottom:4px;transition:color 0.25s}
+    [data-theme="dark"] .path-card h4{color:var(--sf-text)}
+    .path-card p{font-size:12px;color:var(--sf-muted);line-height:1.5}
+    .path-badge{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:0.5px;background:rgba(245,166,35,0.15);color:var(--sf-gold);padding:2px 8px;border-radius:10px;text-transform:uppercase}
+    .footer{border-top:1px solid var(--sf-border);padding:28px 24px;text-align:center;font-size:13px;color:var(--sf-muted);background:var(--sf-surface);transition:background 0.25s,border-color 0.25s}
+    .footer a{color:var(--sf-muted);text-decoration:none}
+    .footer a:hover{color:var(--sf-gold)}
+    @media(max-width:600px){.nav-links .nav-link{display:none}.hero h1{letter-spacing:-1px}.process-steps{grid-template-columns:1fr 1fr;gap:20px}}
   </style>
 </head>
 <body>
-<!-- GTM noscript -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7KX8H3R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- ── NAV ── -->
 <nav class="nav">
   <a href="/" class="nav-logo">Service<span>Flow</span></a>
   <div class="nav-links">
@@ -277,34 +100,27 @@
     <a href="/#packages" class="nav-link">Packages</a>
     <a href="/blog" class="nav-link">Blog</a>
     <a href="/#contact" class="nav-btn ghost">Contact</a>
+    <button class="sf-theme-toggle" onclick="sfToggleTheme()" aria-label="Switch to dark mode"><span class="sf-toggle-icon">🌙</span></button>
     <button class="nav-btn" onclick="openAuditForm()">Start Free Audit</button>
   </div>
 </nav>
 
-<!-- ── BACK ── -->
-<div class="back-crumb">
-  <a href="/" class="back-link">← Back to ServiceFlow</a>
-</div>
+<div class="back-crumb"><a href="/" class="back-link">← Back to ServiceFlow</a></div>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-path-badge">🔍 Audit My Website</div>
   <h1>Find out what's costing you<br><em>leads and traffic</em></h1>
   <p>We analyze your site for SEO gaps, speed issues, conversion problems, and local search visibility — then show you exactly what to fix and why it matters.</p>
-  <button class="cta-main" onclick="openAuditForm()">
-    Get My Free Audit →
-  </button>
+  <button class="cta-main" onclick="openAuditForm()">Get My Free Audit →</button>
 </section>
 
-<!-- ── TRUST BAR ── -->
 <div class="trust-bar">
-  <div class="trust-item"><span class="trust-item-icon">⚡</span><span>Results within <strong>24 hours</strong></span></div>
-  <div class="trust-item"><span class="trust-item-icon">🔒</span><span><strong>No obligation</strong> — ever</span></div>
-  <div class="trust-item"><span class="trust-item-icon">🎯</span><span>Built for <strong>service businesses</strong></span></div>
-  <div class="trust-item"><span class="trust-item-icon">📋</span><span>Takes <strong>2 minutes</strong> to submit</span></div>
+  <div class="trust-item"><span>⚡</span><span>Results within <strong>24 hours</strong></span></div>
+  <div class="trust-item"><span>🔒</span><span><strong>No obligation</strong> — ever</span></div>
+  <div class="trust-item"><span>🎯</span><span>Built for <strong>service businesses</strong></span></div>
+  <div class="trust-item"><span>📋</span><span>Takes <strong>2 minutes</strong></span></div>
 </div>
 
-<!-- ── WHAT YOU GET ── -->
 <section class="what-you-get">
   <div class="what-you-get-inner">
     <p class="section-label">What We Audit</p>
@@ -314,71 +130,60 @@
         <div class="audit-cat-icon">🌐</div>
         <h3>Website Health</h3>
         <ul>
-          <li>Mobile responsiveness</li>
-          <li>Page speed and load time</li>
-          <li>CTA clarity and placement</li>
-          <li>Trust signals and credibility</li>
-          <li>Contact accessibility</li>
-          <li>Conversion structure</li>
+          <li>Mobile responsiveness</li><li>Page speed and load time</li>
+          <li>CTA clarity and placement</li><li>Trust signals and credibility</li>
+          <li>Contact accessibility</li><li>Conversion structure</li>
         </ul>
       </div>
       <div class="audit-cat">
         <div class="audit-cat-icon">📍</div>
         <h3>Local SEO</h3>
         <ul>
-          <li>Title and meta foundations</li>
-          <li>Heading structure</li>
-          <li>Local keyword targeting</li>
-          <li>Schema markup</li>
-          <li>Google Business Profile</li>
-          <li>Service area coverage</li>
+          <li>Title and meta foundations</li><li>Heading structure</li>
+          <li>Local keyword targeting</li><li>Schema markup</li>
+          <li>Google Business Profile</li><li>Service area coverage</li>
         </ul>
       </div>
       <div class="audit-cat">
         <div class="audit-cat-icon">📈</div>
-        <h3>Conversion & Leads</h3>
+        <h3>Conversion and Leads</h3>
         <ul>
-          <li>Lead capture flow</li>
-          <li>Quote or booking workflow</li>
-          <li>Above-the-fold clarity</li>
-          <li>CTA consistency</li>
-          <li>Form friction points</li>
-          <li>Missed revenue gaps</li>
+          <li>Lead capture flow</li><li>Quote or booking workflow</li>
+          <li>Above-the-fold clarity</li><li>CTA consistency</li>
+          <li>Form friction points</li><li>Missed revenue gaps</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PROCESS ── -->
 <section class="process">
-  <p class="section-label" style="text-align:center;">How It Works</p>
-  <h2 class="section-title" style="text-align:center; font-size:26px; font-weight:700; color:var(--sf-white); margin-bottom:0; letter-spacing:-0.3px;">Four steps from submit to strategy</h2>
+  <p class="section-label">How It Works</p>
+  <h2 class="section-title">Four steps from submit to strategy</h2>
   <div class="process-steps">
     <div class="process-step">
       <div class="step-num">1</div>
       <h3>Tell us about your business</h3>
-      <p>Two minutes. Your URL, your biggest challenges, your goals. No long forms.</p>
+      <p>Two minutes. Your URL, your biggest challenges, your goals.</p>
     </div>
     <div class="process-step">
       <div class="step-num">2</div>
       <h3>We run your audit</h3>
-      <p>We analyze your site across website health, local SEO, and conversion metrics.</p>
+      <p>Website health, local SEO, and conversion metrics analyzed.</p>
     </div>
     <div class="process-step">
       <div class="step-num">3</div>
       <h3>You get your results</h3>
-      <p>A real snapshot with scores, specific findings, and prioritized recommendations.</p>
+      <p>Scores, specific findings, and prioritized recommendations.</p>
     </div>
     <div class="process-step">
       <div class="step-num">4</div>
       <h3>Strategy call — optional</h3>
-      <p>We walk you through the deeper findings and show you what we'd build for your business.</p>
+      <p>We walk through findings and show what we would build.</p>
     </div>
   </div>
 </section>
 
-<!-- ── CTA ── -->
 <section class="cta-section">
   <h2>Ready to see what's holding you back?</h2>
   <p>Free. No obligation. Built specifically for service businesses.</p>
@@ -386,7 +191,6 @@
   <a href="/#contact" class="cta-secondary">Or send us a message instead →</a>
 </section>
 
-<!-- ── PATH SWITCHER ── -->
 <div class="path-switcher">
   <h3>Not what you were looking for?</h3>
   <div class="path-cards">
@@ -403,34 +207,45 @@
     </a>
     <a href="/grow" class="path-card">
       <div class="path-card-icon">📈</div>
-      <h4>Grow & Automate</h4>
+      <h4>Grow and Automate</h4>
       <p>Improve follow-up, booking, reviews, and lead generation.</p>
     </a>
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
 <footer class="footer">
   <p>© 2026 ServiceFlow · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/blog">Blog</a></p>
 </footer>
 
-<!-- ── MODAL TRIGGER: opens existing Free Audit modal from index.html ── -->
 <script>
-  // GTM event for path entry
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'path_selected', path: 'existing_website' });
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ event: 'path_selected', path: 'existing_website' });
 
-  function openAuditForm() {
-    // GTM event
-    window.dataLayer.push({ event: 'audit_started', source: 'audit_page' });
-    // Redirect to homepage with audit modal hash — Phase 1B will replace with inline form
-    window.location.href = '/#audit-form';
-  }
+function openAuditForm() {
+  window.dataLayer.push({ event: 'audit_started', source: 'audit_page' });
+  window.location.href = '/#audit-form';
+}
 
-  // If we were redirected here with #audit-form already (future Phase 1B inline), handle it
-  if (window.location.hash === '#audit-form') {
-    // Phase 1B will render the form inline here
+function sfToggleTheme() {
+  var html = document.documentElement;
+  var isDark = html.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    html.removeAttribute('data-theme');
+    localStorage.setItem('sf-theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    localStorage.setItem('sf-theme', 'dark');
   }
+  var icon = document.querySelector('.sf-toggle-icon');
+  if (icon) icon.textContent = isDark ? '🌙' : '☀️';
+}
+
+// Set correct icon on load
+(function() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var icon = document.querySelector('.sf-toggle-icon');
+  if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+})();
 </script>
 </body>
 </html>
