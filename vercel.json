@@ -1,12 +1,44 @@
 {
     "rewrites": [
-          { "source": "/blog", "destination": "/blog.html" },
-          { "source": "/blog/", "destination": "/blog.html" },
-          { "source": "/audit", "destination": "/audit.html" },
-          { "source": "/audit/", "destination": "/audit.html" },
-          { "source": "/build", "destination": "/build.html" },
-          { "source": "/build/", "destination": "/build.html" },
-          { "source": "/grow", "destination": "/grow.html" },
-          { "source": "/grow/", "destination": "/grow.html" }
+        {
+            "source": "/blog",
+            "destination": "/blog.html"
+        },
+        {
+            "source": "/blog/",
+            "destination": "/blog.html"
+        },
+        {
+            "source": "/audit",
+            "destination": "/audit.html"
+        },
+        {
+            "source": "/audit/",
+            "destination": "/audit.html"
+        },
+        {
+            "source": "/build",
+            "destination": "/build.html"
+        },
+        {
+            "source": "/build/",
+            "destination": "/build.html"
+        },
+        {
+            "source": "/grow",
+            "destination": "/grow.html"
+        },
+        {
+            "source": "/grow/",
+            "destination": "/grow.html"
+        },
+        {
+            "source": "/plan",
+            "destination": "/plan.html"
+        },
+        {
+            "source": "/plan/",
+            "destination": "/plan.html"
+        }
     ]
 }

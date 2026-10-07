@@ -106,6 +106,9 @@ button{font-family:var(--bf)}
 .ph-svc-ico{font-size:1rem;margin-bottom:3px}
 .ph-svc-n{font-size:8px;font-weight:600}
 .ph-svc-p{font-size:7px;opacity:0.5;margin-top:2px}
+.ph-live{position:relative;height:520px;overflow:hidden;background:var(--cream)}
+.ph-live iframe{position:absolute;top:0;left:0;width:375px;height:650px;border:0;transform:scale(0.8);transform-origin:0 0;pointer-events:none;background:#fff}
+.ph-live-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
 .preview-pills{display:flex;gap:6px;justify-content:center;margin-top:14px;flex-wrap:wrap}
 .pp{padding:5px 12px;border-radius:100px;border:1.5px solid var(--bdr);background:var(--white);font-size:11px;font-weight:600;cursor:pointer;transition:all 0.2s;color:var(--soft)}
 .pp:hover{border-color:var(--acc);color:var(--acc)}
@@ -795,7 +798,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
     <p class="hero-sub rv d2">ServiceFlow builds websites and automation systems for service businesses &mdash; from hair salons and spas to electricians and landscapers. Get found, get booked, and get paid without the back-and-forth.</p>
     <div class="hero-ctas rv d2">
       <button class="btn-f" onclick="openM('audit')">Get Your Free Site Audit</button>
-      <button class="btn-o" onclick="openM('demo')">Book a Demo Call</button>
+      <a class="btn-o" href="/plan" style="text-decoration:none;display:inline-flex;align-items:center">Find My Plan in 2 Minutes</a>
     </div>
     <div class="hero-proof rv d3">
       <div class="sp-avs">
@@ -808,11 +811,18 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
     </div>
   </div>
   <div class="hero-right rv d2">
-    <div class="phone-wrap">
+    <a class="phone-wrap" href="https://weinandtconcrete.com" target="_blank" rel="noopener" aria-label="View the live Weinandt Concrete website" style="display:block;text-decoration:none;color:inherit">
       <div class="ph-notch"><div class="ph-notch-bar"></div></div>
-      <div class="ph-body" id="ph-body"></div>
-    </div>
-    <div class="preview-pills" id="ind-box"></div>
+      <div class="ph-live">
+        <div class="ph-live-fallback">
+          <div class="ph-h">Weinandt Concrete</div>
+          <div class="ph-p" style="opacity:.7">Driveways, patios, and stamped concrete across the Twin Cities</div>
+          <span class="ph-btn" style="background:var(--acc)">Get a Free Estimate</span>
+        </div>
+        <iframe src="https://weinandtconcrete.com" title="Weinandt Concrete live website" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+      </div>
+    </a>
+    <div class="preview-pills"><a class="pp on" href="https://weinandtconcrete.com" target="_blank" rel="noopener" style="text-decoration:none">Live client: Weinandt Concrete &middot; View site</a></div>
   </div>
 </section>
 
@@ -894,6 +904,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
         <div class="lc-note">No commitment &middot; See pricing first</div>
       </div>
     </div>
+    <p style="text-align:center;margin-top:22px;font-size:15px">Not sure which you need? <a href="/plan" style="color:var(--acc);font-weight:700">Answer 6 questions and get a plan recommendation</a></p>
   </div>
 </div>
 
@@ -1027,7 +1038,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
     </table>
     <div class="ml-cta">
       <button class="btn-f" onclick="openM('new')">Get Multi-Location Quote</button>
-      <span style="font-size:13px;color:var(--soft)">or email us at <a href="/cdn-cgi/l/email-protection#c6a5a9a8b2a7a5b286b5b0a5eba0aaa9b1e8a5a9ab" style="color:var(--acc)"><span class="__cf_email__">[email&#160;protected]</span></a></span>
+      <span style="font-size:13px;color:var(--soft)">or email us at <a href="mailto:contact@svc-flow.com" style="color:var(--acc)">contact@svc-flow.com</a></span>
     </div>
   </div>
 
@@ -1258,22 +1269,13 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
 <div class="rev-section">
   <div class="rev-inner">
     <div class="rv"><div class="ey">Client Results</div></div>
-    <h2 class="ti rv d1">What service businesses say</h2>
+    <h2 class="ti rv d1">What our clients say</h2>
     <div class="rev-outer">
-      <div class="rev-track" id="rev-track">
-        <div class="rev-card"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"ServiceFlow completely transformed our online presence. We went from 2 leads a week to 10&ndash;15. The estimator alone saves me hours every week &mdash; no more free site visits."</p><div class="rc-footer"><div class="rc-avatar">K</div><div><div class="rc-author">Kyle</div><div class="rc-role">Concrete Contractor</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
-        <div class="rev-card"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"My Google reviews went from 8 to 34 in three months just from the automated follow-up. My rating is now 4.9. The results speak for themselves."</p><div class="rc-footer"><div class="rc-avatar">T</div><div><div class="rc-author">Tasha</div><div class="rc-role">Hair Salon Owner</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
-        <div class="rev-card"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"The booking system cut my no-show rate from 15% to about 2%. The deposit requirement plus the reminder texts just works. Worth every penny."</p><div class="rc-footer"><div class="rc-avatar">D</div><div><div class="rc-author">David</div><div class="rc-role">Barber Shop Owner</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
-        <div class="rev-card"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"We had a Wix site nobody could find. ServiceFlow rebuilt everything and within 6 weeks we were in the map pack for our main keywords. Game changer."</p><div class="rc-footer"><div class="rc-avatar">R</div><div><div class="rc-author">Rosa</div><div class="rc-role">Cleaning Service Owner</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
-        <div class="rev-card"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"As a nonprofit we needed something professional but affordable. The team understood our mission and built a site that actually converts visitors into donors."</p><div class="rc-footer"><div class="rc-avatar">J</div><div><div class="rc-author">James</div><div class="rc-role">Nonprofit Director</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
-        <div class="rev-card"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"The referral program has been incredible. Set it up once and now we get 3&ndash;4 referred clients every month without doing anything. Pure automation."</p><div class="rc-footer"><div class="rc-avatar">M</div><div><div class="rc-author">Marcus</div><div class="rc-role">HVAC Company Owner</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
+      <div class="rev-track" id="rev-track" style="justify-content:center">
+        <div class="rev-card" style="max-width:560px;flex:0 1 560px;margin:0 auto"><div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rc-text">"ServiceFlow completely transformed our online presence. We went from 2 leads a week to 10&ndash;15. The estimator alone saves me hours every week &mdash; no more free site visits."</p><div class="rc-footer"><div class="rc-avatar">K</div><div><div class="rc-author">Kyle</div><div class="rc-role">Concrete Contractor</div></div><div class="rc-badge">&#10003; Verified</div></div></div>
       </div>
     </div>
-    <div class="rev-controls">
-      <button class="rev-arr" onclick="revMove(-1)">&#8592;</button>
-      <div class="rev-dots" id="rev-dots"></div>
-      <button class="rev-arr" onclick="revMove(1)">&#8594;</button>
-    </div>
+
   </div>
 </div>
 
@@ -1286,8 +1288,6 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
       <div class="ps-logo">HubSpot<span>CRM</span></div>
       <div class="ps-logo">Google<span>Analytics + Ads</span></div>
       <div class="ps-logo">Calendly<span>Booking</span></div>
-      <div class="ps-logo">GoHighLevel<span>Automation</span></div>
-      <div class="ps-logo">BrightLocal<span>Local SEO</span></div>
     </div>
   </div>
 </div>
@@ -1307,7 +1307,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
     <div class="hs-wrap">
       <div class="hs-ti">Send us a message</div>
       <div class="hs-su">We'll get back to you within 1 business day.</div>
-      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
       <script>
         hbspt.forms.create({
           region: "na1",
@@ -1352,7 +1352,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
         <div class="f-col-ti">Company</div>
         <div class="f-links">
           <a href="#contact">Contact Us</a>
-          <a href="/cdn-cgi/l/email-protection#e0838f8e94818394a0939683cd868c8f97ce838f8d"><span class="__cf_email__" data-cfemail="23404c4d57424057635055400e454f4c540d404c4e">[email&#160;protected]</span></a>
+          <a href="mailto:contact@svc-flow.com">contact@svc-flow.com</a>
           <a href="#packages">Pricing</a>
           <a href="/blog">Resources</a>
         </div>
@@ -1789,7 +1789,7 @@ select.mi{appearance:none;-webkit-appearance:none;background-image:url("data:ima
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── PORTFOLIO CARDS ─────────────────────────────────────────
 
 function pfThumbHTML(d) {
@@ -2316,10 +2316,8 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.rv').forEach(el => observer.observe(el));
 
 // ── INIT ─────────────────────────────────────────────────────
-buildPortfolio();
-buildMarquee();
-buildDots();
-initChat();
+// Guarded: buildPortfolio was undefined and stopped everything below it from running
+['buildPortfolio','buildMarquee','buildDots','initChat'].forEach(function(fn){ try { if (typeof window[fn] === 'function') window[fn](); } catch(e) { console.warn(fn, e); } });
 // Rebuild carousel dots on resize (desktop↔mobile perPage changes)
 let _revResizeTimer;
 window.addEventListener('resize', () => {
