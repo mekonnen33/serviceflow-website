@@ -3,104 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Website Audit for Service Businesses — ServiceFlow</title>
-  <meta name="description" content="Find out what's costing you leads, traffic, and conversions. Get a free website and SEO audit from ServiceFlow — built for service businesses." />
+  <title>Site Check: See What's Holding Your Website Back | ServiceFlow</title>
+  <meta name="description" content="Run a Site Check on your service business website. See your mobile speed and search scores, what is costing you leads, and the plan that fixes it." />
   <link rel="canonical" href="https://svc-flow.com/audit" />
   <script>(function(){var s=localStorage.getItem('sf-theme');if(s==='dark')document.documentElement.setAttribute('data-theme','dark');})()</script>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K7KX8H3R');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--sf-bg:#f8f9fc;--sf-surface:#eef2f8;--sf-card:#ffffff;--sf-border:#dde3ee;--sf-text:#0d1b2e;--sf-muted:#66738a;--sf-gold:#1a6bdb;--sf-gold-dk:#0f4fa0;--sf-navy:#0d1b2e;--sf-green:#16a34a;--sf-white:#ffffff;--sf-shadow:0 1px 4px rgba(13,27,46,0.07);--radius:14px;--radius-lg:20px}
+    :root{--sf-bg:#f8f9fc;--sf-surface:#eef2f8;--sf-card:#ffffff;--sf-border:#dde3ee;--sf-text:#0d1b2e;--sf-muted:#66738a;--sf-gold:#1a6bdb;--sf-gold-dk:#0f4fa0;--sf-navy:#0d1b2e;--sf-green:#16a34a;--sf-white:#ffffff;--sf-shadow:0 1px 4px rgba(0,0,0,0.07);--radius:10px;--radius-lg:16px}
     [data-theme="dark"]{--sf-bg:#0b1220;--sf-surface:#111a2b;--sf-card:#152036;--sf-border:#24314a;--sf-text:#eef2f8;--sf-muted:#93a0b8;--sf-navy:#eef2f8;--sf-gold:#4d8ff0;--sf-gold-dk:#1a6bdb;--sf-green:#22c55e;--sf-shadow:0 1px 4px rgba(0,0,0,0.4)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:var(--sf-bg);color:var(--sf-text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.6;min-height:100vh;transition:background 0.25s,color 0.25s}
-    .nav{position:sticky;top:0;z-index:100;background:rgba(248,249,252,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--sf-border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;transition:background 0.25s,border-color 0.25s}
-    [data-theme="dark"] .nav{background:rgba(11,18,32,0.96)}
-    .nav-logo{font-size:18px;font-weight:800;color:var(--sf-navy);text-decoration:none;letter-spacing:-0.3px;transition:color 0.25s}
+    body{background:var(--sf-bg);color:var(--sf-text);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.6;min-height:100vh;transition:background .25s,color .25s}
+    a{color:inherit}
+    :focus-visible{outline:3px solid var(--sf-gold);outline-offset:2px;border-radius:6px}
+
+    .nav{position:sticky;top:0;z-index:100;background:rgba(248,249,252,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--sf-border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+    [data-theme="dark"] .nav{background:rgba(11,18,32,.96)}
+    .nav-logo{font-size:18px;font-weight:800;color:var(--sf-navy);text-decoration:none;letter-spacing:-.3px}
     .nav-logo span{color:var(--sf-gold)}
     .nav-links{display:flex;align-items:center;gap:6px}
-    .nav-link{color:var(--sf-muted);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px;transition:color 0.2s}
+    .nav-link{color:var(--sf-muted);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px}
     .nav-link:hover{color:var(--sf-text)}
-    .nav-btn{background:var(--sf-gold);color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s;white-space:nowrap}
-    .nav-btn:hover{background:var(--sf-gold-dk)}
-    .nav-btn.ghost{background:transparent;color:var(--sf-text);border:1px solid var(--sf-border)}
-    .nav-btn.ghost:hover{border-color:var(--sf-gold);color:var(--sf-gold)}
-    .sf-theme-toggle{background:transparent;border:1px solid var(--sf-border);border-radius:8px;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:border-color 0.2s;flex-shrink:0}
-    .sf-theme-toggle:hover{border-color:var(--sf-gold)}
-    .back-crumb{padding:16px 24px 0;max-width:760px;margin:0 auto}
-    .back-link{color:var(--sf-muted);text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s}
-    .back-link:hover{color:var(--sf-gold)}
-    .hero{padding:56px 24px 48px;max-width:760px;margin:0 auto;text-align:center}
-    .hero-path-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(26,107,219,0.08);border:1px solid rgba(26,107,219,0.18);color:var(--sf-navy);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:24px;letter-spacing:0.5px;text-transform:uppercase;transition:all 0.25s}
-    [data-theme="dark"] .hero-path-badge{background:rgba(26,107,219,0.12);border-color:rgba(26,107,219,0.3);color:var(--sf-gold)}
-    .hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.12;letter-spacing:-1.5px;margin-bottom:18px;color:var(--sf-navy);transition:color 0.25s}
-    [data-theme="dark"] .hero h1{color:var(--sf-text)}
-    .hero h1 em{font-style:normal;color:var(--sf-gold)}
-    .hero p{font-size:18px;color:var(--sf-muted);max-width:540px;margin:0 auto 36px;line-height:1.65}
-    .cta-main{display:inline-flex;align-items:center;gap:8px;background:var(--sf-gold);color:#fff;font-size:16px;font-weight:700;padding:16px 32px;border-radius:var(--radius);border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;text-decoration:none}
-    .cta-main:hover{background:var(--sf-gold-dk);transform:translateY(-1px)}
-    .cta-secondary{display:block;margin-top:14px;font-size:13px;color:var(--sf-muted);text-decoration:none}
-    .cta-secondary:hover{color:var(--sf-gold)}
-    .trust-bar{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;padding:0 24px 48px;max-width:680px;margin:0 auto}
-    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--sf-muted)}
-    .trust-item strong{color:var(--sf-navy);font-weight:600;transition:color 0.25s}
-    [data-theme="dark"] .trust-item strong{color:var(--sf-text)}
-    .what-you-get{background:var(--sf-surface);border-top:1px solid var(--sf-border);border-bottom:1px solid var(--sf-border);padding:56px 24px;transition:background 0.25s,border-color 0.25s}
-    .what-you-get-inner{max-width:900px;margin:0 auto}
-    .section-label{text-align:center;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--sf-navy);margin-bottom:12px;transition:color 0.25s}
-    [data-theme="dark"] .section-label{color:var(--sf-gold)}
-    .section-title{text-align:center;font-size:28px;font-weight:700;color:var(--sf-navy);margin-bottom:40px;letter-spacing:-0.5px;transition:color 0.25s}
-    [data-theme="dark"] .section-title{color:var(--sf-text)}
-    .audit-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .audit-cat{background:var(--sf-card);border:1px solid var(--sf-border);border-radius:var(--radius-lg);padding:22px 20px;box-shadow:var(--sf-shadow);transition:background 0.25s,border-color 0.25s}
-    .audit-cat-icon{font-size:22px;margin-bottom:10px}
-    .audit-cat h3{font-size:15px;font-weight:700;color:var(--sf-navy);margin-bottom:8px;transition:color 0.25s}
-    [data-theme="dark"] .audit-cat h3{color:var(--sf-text)}
-    .audit-cat ul{list-style:none;display:flex;flex-direction:column;gap:5px}
-    .audit-cat li{font-size:13px;color:var(--sf-muted);display:flex;align-items:flex-start;gap:7px}
-    .audit-cat li::before{content:"✓";color:var(--sf-green);flex-shrink:0;font-size:12px;margin-top:2px;font-weight:700}
-    .process{padding:64px 24px;max-width:860px;margin:0 auto}
-    .process-steps{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
-    .process-step{text-align:center}
-    .step-num{width:42px;height:42px;border-radius:50%;background:var(--sf-gold);color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:background 0.25s,color 0.25s,border 0.25s}
-    [data-theme="dark"] .step-num{background:rgba(26,107,219,0.12);border:2px solid var(--sf-gold);color:var(--sf-gold)}
-    .process-step h3{font-size:15px;font-weight:700;color:var(--sf-navy);margin-bottom:6px;transition:color 0.25s}
-    [data-theme="dark"] .process-step h3{color:var(--sf-text)}
-    .process-step p{font-size:13px;color:var(--sf-muted);line-height:1.55}
-    .cta-section{background:var(--sf-navy);padding:64px 24px;text-align:center;transition:background 0.25s}
-    [data-theme="dark"] .cta-section{background:var(--sf-surface);border-top:1px solid var(--sf-border)}
-    .cta-section h2{font-size:30px;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-0.5px}
-    [data-theme="dark"] .cta-section h2{color:var(--sf-text)}
-    .cta-section p{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:32px}
-    [data-theme="dark"] .cta-section p{color:var(--sf-muted)}
-    .path-switcher{padding:56px 24px;max-width:860px;margin:0 auto;border-top:1px solid var(--sf-border)}
-    .path-switcher h3{font-size:16px;font-weight:700;color:var(--sf-muted);margin-bottom:20px;text-align:center}
-    .path-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .path-card{background:var(--sf-card);border:1px solid var(--sf-border);border-radius:var(--radius-lg);padding:20px;text-decoration:none;transition:border-color 0.2s,transform 0.15s,background 0.25s;display:block;box-shadow:var(--sf-shadow)}
-    .path-card:hover{border-color:var(--sf-gold);transform:translateY(-2px)}
-    .path-card.active{border-color:var(--sf-gold);background:rgba(26,107,219,0.05)}
-    .path-card-icon{font-size:24px;margin-bottom:10px}
-    .path-card h4{font-size:14px;font-weight:700;color:var(--sf-navy);margin-bottom:4px;transition:color 0.25s}
-    [data-theme="dark"] .path-card h4{color:var(--sf-text)}
-    .path-card p{font-size:12px;color:var(--sf-muted);line-height:1.5}
-    .path-badge{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:0.5px;background:rgba(26,107,219,0.15);color:var(--sf-gold);padding:2px 8px;border-radius:10px;text-transform:uppercase}
-    .footer{border-top:1px solid var(--sf-border);padding:28px 24px;text-align:center;font-size:13px;color:var(--sf-muted);background:var(--sf-surface);transition:background 0.25s,border-color 0.25s}
-    .footer a{color:var(--sf-muted);text-decoration:none}
-    .footer a:hover{color:var(--sf-gold)}
-
-    .sf-toggle-pill{display:flex;align-items:center;background:var(--sf-surface);border:1px solid var(--sf-border);border-radius:10px;overflow:hidden;transition:background 0.25s,border-color 0.25s}
-    .sf-toggle-pill button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 12px;border:none;cursor:pointer;background:transparent;transition:background 0.2s;font-size:11px;font-weight:600;color:var(--sf-muted);line-height:1;white-space:nowrap}
+    .sf-toggle-pill{display:flex;align-items:center;background:var(--sf-surface);border:1px solid var(--sf-border);border-radius:10px;overflow:hidden}
+    .sf-toggle-pill button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 12px;border:none;cursor:pointer;background:transparent;font-size:11px;font-weight:600;color:var(--sf-muted);line-height:1;white-space:nowrap}
     .sf-toggle-pill button .t-icon{font-size:15px}
     .sf-toggle-pill button.active{background:var(--sf-gold);color:#fff}
-    .sf-toggle-pill button:not(.active):hover{background:var(--sf-border)}
     .sf-toggle-pill .t-div{width:1px;background:var(--sf-border);align-self:stretch}
-    @media(max-width:600px){.nav-links .nav-link{display:none}.hero h1{letter-spacing:-1px}.process-steps{grid-template-columns:1fr 1fr;gap:20px}}
-  
-    /* Brand alignment with homepage */
-    body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif}
-    h1,h2{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.01em}
-    .nav-btn,.cta-main,button{border-radius:100px}
+    @media (max-width:640px){.nav-links .nav-link{display:none}.nav{padding:0 14px}}
+
+    .wrap{max-width:720px;margin:0 auto;padding:40px 20px 72px}
+    .intro{text-align:center;margin-bottom:28px}
+    .intro h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,5vw,46px);font-weight:700;line-height:1.08;letter-spacing:-.5px;color:var(--sf-navy);margin-bottom:12px}
+    [data-theme="dark"] .intro h1{color:var(--sf-text)}
+    .intro p{color:var(--sf-muted);font-size:17px;max-width:520px;margin:0 auto}
+
+    .panel{background:var(--sf-card);border:1px solid var(--sf-border);border-radius:var(--radius-lg);box-shadow:var(--sf-shadow);padding:28px}
+    @media (max-width:520px){.panel{padding:20px 16px}}
+
+    .progress{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+    .progress-track{flex:1;height:6px;background:var(--sf-surface);border-radius:6px;overflow:hidden}
+    .progress-fill{height:100%;width:0;background:var(--sf-gold);border-radius:6px;transition:width .35s ease}
+    .progress-label{font-size:13px;color:var(--sf-muted);font-weight:600;white-space:nowrap}
+
+    .q-title{font-size:22px;font-weight:800;letter-spacing:-.4px;line-height:1.25;margin-bottom:6px}
+    .q-hint{color:var(--sf-muted);font-size:14px;margin-bottom:18px}
+    .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:560px){.opts{grid-template-columns:1fr}}
+    .opt{display:flex;gap:12px;align-items:flex-start;text-align:left;background:var(--sf-bg);border:1.5px solid var(--sf-border);border-radius:var(--radius);padding:14px;cursor:pointer;color:var(--sf-text);font:inherit;transition:border-color .15s,background .15s}
+    .opt:hover{border-color:var(--sf-gold)}
+    .opt[aria-pressed="true"]{border-color:var(--sf-gold);background:rgba(26,107,219,.08)}
+    .opt-ico{font-size:22px;line-height:1.2}
+    .opt-name{font-weight:700;font-size:15px;line-height:1.3}
+    .opt-desc{color:var(--sf-muted);font-size:13px;line-height:1.4;margin-top:2px}
+
+    .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:100px;font:inherit;font-weight:700;font-size:15px;padding:12px 22px;cursor:pointer;border:none;text-decoration:none}
+    .btn-primary{background:var(--sf-gold);color:#fff}
+    .btn-primary:hover{background:var(--sf-gold-dk)}
+    .btn-primary[disabled]{opacity:.45;cursor:not-allowed}
+    .btn-ghost{background:transparent;color:var(--sf-muted);border:1px solid var(--sf-border)}
+    .btn-ghost:hover{color:var(--sf-text);border-color:var(--sf-muted)}
+    .btn-block{width:100%}
+
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+    .field label{font-size:14px;font-weight:600}
+    .field input,.field textarea{font:inherit;font-size:15px;padding:11px 13px;border:1.5px solid var(--sf-border);border-radius:var(--radius);background:var(--sf-bg);color:var(--sf-text)}
+    .field input:focus,.field textarea:focus{border-color:var(--sf-gold);outline:none}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:560px){.grid2{grid-template-columns:1fr}}
+    .fine{font-size:13px;color:var(--sf-muted)}
+    .err{color:#c2410c;font-size:14px;margin-top:8px;display:none}
+
+    /* Result */
+    .result-head{border-bottom:1px solid var(--sf-border);padding-bottom:20px;margin-bottom:20px}
+    .avatar-tag{display:inline-block;font-size:13px;font-weight:700;color:#1a6bdb;background:rgba(26,107,219,.08);border-radius:20px;padding:4px 12px;margin-bottom:12px}
+    [data-theme="dark"] .avatar-tag{background:rgba(77,143,240,.16);color:#8db6f5}
+    .result-head h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,4vw,34px);font-weight:700;letter-spacing:-.3px;line-height:1.15;margin-bottom:8px}
+    .result-head p{color:var(--sf-muted)}
+    .why h3,.incl h3{font-size:15px;font-weight:800;margin-bottom:10px}
+    .why ul,.incl ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+    .why li{padding-left:16px;border-left:3px solid var(--sf-gold);font-size:15px;line-height:1.5}
+    .incl li{position:relative;padding-left:24px;font-size:15px}
+    .incl li::before{content:"";position:absolute;left:2px;top:8px;width:10px;height:6px;border-left:2.5px solid var(--sf-green);border-bottom:2.5px solid var(--sf-green);transform:rotate(-45deg)}
+
+    .price-box{background:var(--sf-surface);border:1px solid var(--sf-border);border-radius:var(--radius);padding:18px;margin-bottom:16px}
+    .price-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .price-name{font-size:20px;font-weight:800}
+    .price-main{font-size:30px;font-weight:800;letter-spacing:-1px}
+    .price-main small{font-size:15px;font-weight:600;color:var(--sf-muted);letter-spacing:0}
+    .price-setup{color:var(--sf-muted);font-size:14px;margin-top:2px}
+    .founding{margin-top:12px;padding-top:12px;border-top:1px dashed var(--sf-border);font-size:14px}
+    .founding strong{color:var(--sf-green)}
+    .actions{display:flex;flex-direction:column;gap:10px}
+    .linkish{background:none;border:none;color:var(--sf-muted);font:inherit;font-size:14px;text-decoration:underline;cursor:pointer;padding:4px}
+    .linkish:hover{color:var(--sf-text)}
+    .box{display:none;margin-top:16px;border:1px solid var(--sf-border);border-radius:var(--radius);padding:16px;background:var(--sf-bg)}
+    .box.open{display:block}
+    .alt-list{display:flex;flex-direction:column;gap:8px}
+    .alt{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:10px 12px;border:1px solid var(--sf-border);border-radius:8px;background:var(--sf-card)}
+    .alt b{font-weight:700}
+    .alt button{white-space:nowrap}
+    .done{display:none;text-align:center;padding:12px 0}
+    .done.show{display:block}
+    .done h3{font-size:20px;font-weight:800;margin-bottom:6px}
+
+    .faq{margin-top:28px}
+    .faq h2{font-size:18px;font-weight:800;margin-bottom:12px}
+    details{border-bottom:1px solid var(--sf-border);padding:12px 0}
+    summary{cursor:pointer;font-weight:600;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";float:right;color:var(--sf-muted);font-weight:700}
+    details[open] summary::after{content:"\2212"}
+    details p{color:var(--sf-muted);font-size:15px;margin-top:8px}
+
+    .footer{text-align:center;padding:28px 20px;color:var(--sf-muted);font-size:13px;border-top:1px solid var(--sf-border)}
+    .footer a{color:var(--sf-muted)}
+    .step{animation:none}
+    @media (prefers-reduced-motion:no-preference){.step.enter{animation:stepIn .25s ease}}
+    @keyframes stepIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    [hidden]{display:none!important}
+    .scan{text-align:center;padding:30px 10px}
+    .spinner{width:46px;height:46px;border-radius:50%;border:4px solid var(--sf-surface);border-top-color:var(--sf-gold);margin:0 auto 18px;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .scan-steps{list-style:none;display:inline-flex;flex-direction:column;gap:8px;text-align:left;margin-top:14px;color:var(--sf-muted);font-size:14px}
+    .scan-steps li.on{color:var(--sf-text);font-weight:600}
+    .scores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+    @media(max-width:520px){.scores{grid-template-columns:1fr}}
+    .score{border:1px solid var(--sf-border);border-radius:var(--radius);padding:14px;text-align:center;background:var(--sf-bg)}
+    .score-n{font-size:30px;font-weight:800;letter-spacing:-1px}
+    .score-l{font-size:12px;color:var(--sf-muted);font-weight:600}
+    .good{color:#16a34a}.ok{color:#d97706}.bad{color:#dc2626}
+    .find{border-left:3px solid #dc2626;padding:10px 14px;background:var(--sf-bg);border-radius:0 8px 8px 0;margin-bottom:10px;font-size:15px}
+    .find b{display:block;margin-bottom:2px}
+    .locked{position:relative;border:1px dashed var(--sf-border);border-radius:var(--radius);padding:14px;margin:14px 0 22px;overflow:hidden}
+    .locked .blur{filter:blur(5px);user-select:none;color:var(--sf-muted);font-size:14px;line-height:2}
+    .locked .lock-msg{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(transparent,var(--sf-card) 55%);padding:12px;font-size:15px}
+    .other-input{margin-top:12px}
+    .report-box{margin-top:16px;border:1px solid var(--sf-border);border-radius:var(--radius);padding:16px;background:var(--sf-bg);font-size:14px}
+    .chk{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--sf-muted);margin:-4px 0 14px}
+
   </style>
 </head>
 <body>
@@ -117,146 +159,350 @@
     <a href="/#examples" class="nav-link">Examples</a>
     <a href="/#packages" class="nav-link">Packages</a>
     <a href="/blog" class="nav-link">Blog</a>
-    <a href="/#contact" class="nav-btn ghost">Contact</a>
-    <button class="nav-btn" onclick="openAuditForm()">Start Free Audit</button>
   </div>
 </nav>
 
-<div class="back-crumb"><a href="/" class="back-link">← Back to ServiceFlow</a></div>
-
-<section class="hero">
-  <div class="hero-path-badge">🔍 Audit My Website</div>
-  <h1>Find out what's costing you<br><em>leads and traffic</em></h1>
-  <p>We analyze your site for SEO gaps, speed issues, conversion problems, and local search visibility — then show you exactly what to fix and why it matters.</p>
-  <button class="cta-main" onclick="openAuditForm()">Get My Free Audit →</button>
-</section>
-
-<div class="trust-bar">
-  <div class="trust-item"><span>⚡</span><span>Results within <strong>24 hours</strong></span></div>
-  <div class="trust-item"><span>🔒</span><span><strong>No obligation</strong> — ever</span></div>
-  <div class="trust-item"><span>🎯</span><span>Built for <strong>service businesses</strong></span></div>
-  <div class="trust-item"><span>📋</span><span>Takes <strong>2 minutes</strong></span></div>
-</div>
-
-<section class="what-you-get">
-  <div class="what-you-get-inner">
-    <p class="section-label">What We Audit</p>
-    <h2 class="section-title">A real diagnostic — not a generic report</h2>
-    <div class="audit-categories">
-      <div class="audit-cat">
-        <div class="audit-cat-icon">🌐</div>
-        <h3>Website Health</h3>
-        <ul>
-          <li>Mobile responsiveness</li><li>Page speed and load time</li>
-          <li>CTA clarity and placement</li><li>Trust signals and credibility</li>
-          <li>Contact accessibility</li><li>Conversion structure</li>
-        </ul>
-      </div>
-      <div class="audit-cat">
-        <div class="audit-cat-icon">📍</div>
-        <h3>Local SEO</h3>
-        <ul>
-          <li>Title and meta foundations</li><li>Heading structure</li>
-          <li>Local keyword targeting</li><li>Schema markup</li>
-          <li>Google Business Profile</li><li>Service area coverage</li>
-        </ul>
-      </div>
-      <div class="audit-cat">
-        <div class="audit-cat-icon">📈</div>
-        <h3>Conversion and Leads</h3>
-        <ul>
-          <li>Lead capture flow</li><li>Quote or booking workflow</li>
-          <li>Above-the-fold clarity</li><li>CTA consistency</li>
-          <li>Form friction points</li><li>Missed revenue gaps</li>
-        </ul>
-      </div>
+<main class="wrap">
+  <header class="intro" id="intro">
+    <h1>See what's holding your website back</h1>
+    <p>Run a Site Check in about 2 minutes. We scan your site, show you what's costing you leads, and recommend the plan that fixes it.</p>
+  </header>
+  <section class="panel" aria-live="polite">
+    <div class="progress" id="progress">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">Step 1 of 4</div>
     </div>
-  </div>
-</section>
-
-<section class="process">
-  <p class="section-label">How It Works</p>
-  <h2 class="section-title">Four steps from submit to strategy</h2>
-  <div class="process-steps">
-    <div class="process-step">
-      <div class="step-num">1</div>
-      <h3>Tell us about your business</h3>
-      <p>Two minutes. Your URL, your biggest challenges, your goals.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">2</div>
-      <h3>We run your audit</h3>
-      <p>Website health, local SEO, and conversion metrics analyzed.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">3</div>
-      <h3>You get your results</h3>
-      <p>Scores, specific findings, and prioritized recommendations.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">4</div>
-      <h3>Strategy call — optional</h3>
-      <p>We walk through findings and show what we would build.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <h2>Ready to see what's holding you back?</h2>
-  <p>Free. No obligation. Built specifically for service businesses.</p>
-  <button class="cta-main" onclick="openAuditForm()">Get My Free Audit →</button>
-  <a href="/#contact" class="cta-secondary">Or send us a message instead →</a>
-</section>
-
-<div class="path-switcher">
-  <h3>Not what you were looking for?</h3>
-  <div class="path-cards">
-    <a href="/audit" class="path-card active">
-      <div class="path-card-icon">🔍</div>
-      <h4>Audit My Website</h4>
-      <p>Find what's costing you traffic, leads, and conversions.</p>
-      <span class="path-badge">You are here</span>
-    </a>
-    <a href="/build" class="path-card">
-      <div class="path-card-icon">🏗️</div>
-      <h4>Build My Website</h4>
-      <p>Get a professional site built to turn visitors into customers.</p>
-    </a>
-    <a href="/grow" class="path-card">
-      <div class="path-card-icon">📈</div>
-      <h4>Grow and Automate</h4>
-      <p>Improve follow-up, booking, reviews, and lead generation.</p>
-    </a>
-  </div>
-</div>
+    <div id="stage"></div>
+  </section>
+  <section class="faq">
+    <h2>Common questions</h2>
+    <details><summary>What does the Site Check look at?</summary><p>Mobile speed, search basics, accessibility, and technical issues, using Google's own PageSpeed testing, plus the problems you tell us about.</p></details>
+    <details><summary>What's in the full detailed report?</summary><p>Every issue we found, ranked by how much it is likely costing you, with the fix for each. It's included with any plan, or $49 on its own, credited toward your setup if you start within 30 days.</p></details>
+    <details><summary>Do I need to get on a call?</summary><p>No. You'll see your results and a plan recommendation right here, and you can start on the spot. Calls are available for custom or multi-location projects.</p></details>
+  </section>
+</main>
 
 <footer class="footer">
   <p>© 2026 ServiceFlow · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/blog">Blog</a></p>
 </footer>
 
 <script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({ event: 'path_selected', path: 'existing_website' });
+/* =========================================================
+   CONFIG + ENGINE (shared with the Plan Finder)
+   ========================================================= */
+var SF_CONFIG = {
+  formspree: 'https://formspree.io/f/xzdylgkk',   // existing ServiceFlow Formspree form
+  makeWebhook: '',                                  // optional: Make.com webhook URL for HubSpot sync
+  calendly: 'https://calendly.com/contact-svc-flow/30min',
+  foundingDiscount: 0.20,                           // 20% off monthly for 12 months
+  foundingSpotsLeft: 5,
+  psiKey: '',                                       // optional Google PageSpeed API key (free) for higher scan volume
+  reportPrice: 49, reportLink: '',                  // Stripe Payment Link for the $49 full report
+  plans: {
+    found: {
+      name: 'Get Found', monthly: 297, setup: 799, setupNote: 'Setup from $799 (includes a Launch website build or a refresh of your current site)',
+      stripeLink: '', stripeLinkFounding: '',
+      includes: ['Launch website (3 to 5 pages) or a refresh of your current site','Hosting, security updates, and 1 content edit per month','Google Business Profile management','Automatic review requests after every job','Monthly visibility report']
+    },
+    booked: {
+      name: 'Get Booked', monthly: 547, setup: 1999, setupNote: 'Setup from $1,999 (includes a Grow website build)',
+      stripeLink: '', stripeLinkFounding: '',
+      includes: ['Everything in Get Found','10-page website built to convert visitors into calls','Missed-call text-back so no lead goes cold','Automatic lead follow-up by text and email','Quote or booking flow matched to how you sell','Lead pipeline in a simple CRM']
+    },
+    office: {
+      name: 'Office Complete', monthly: 797, monthlyNote: 'from', setup: 1999, setupNote: 'Setup from $1,999 (website build plus tech onboarding)',
+      stripeLink: '', stripeLinkFounding: '',
+      includes: ['Website, Google profile, and review automation','Remote helpdesk for your team (up to 10 users)','Network and device monitoring','Microsoft 365 or Google Workspace administration','Backup checks','3 support hours per month included; on-site visits billed hourly by Axim Tech Solutions']
+    },
+    custom: {
+      name: 'Custom Build', monthly: 0, setup: 0, setupNote: 'Scoped after a short planning call',
+      includes: ['Multi-location or larger-team setup','Custom pages, integrations, and systems','One planning call, then a fixed written quote']
+    }
+  }
+};
 
-function openAuditForm() {
-  window.dataLayer.push({ event: 'audit_started', source: 'audit_page' });
-  window.location.href = '/#audit-form';
+var AVATARS = {
+  launch: { key:'launch', name:'The New Launch', line:"You're early, and the goal is to look established and start getting found fast without overspending." },
+  hidden: { key:'hidden', name:'The Hidden Pro', line:"You do good work, but too few people can find you or trust you online yet. Visibility is the bottleneck." },
+  busy:   { key:'busy',   name:'The Busy Operator', line:"Leads are coming in, but calls, quotes, and follow-up are eating your time and some jobs slip through." },
+  office: { key:'office', name:'The Growing Office', line:"Your team depends on its computers, email, and network, and you need marketing and tech handled by one partner." },
+  leader: { key:'leader', name:'The Market Leader', line:"You run a larger operation, so a custom setup will serve you better than a standard plan." }
+};
+
+function recommend(a){
+  var p = a.pains || [], s = {found:0, booked:0, office:0};
+  if (a.team === 'large') return finalize('custom', AVATARS.leader, a);
+  if (a.site === 'none') s.found += 2;
+  if (a.site === 'weak') { s.found += 1; s.booked += 1; }
+  if (a.site === 'ok') s.booked += 1;
+  if (p.indexOf('visibility') > -1) s.found += 3;
+  if (p.indexOf('reviews') > -1) s.found += 2;
+  if (p.indexOf('calls') > -1) s.booked += 3;
+  if (p.indexOf('quotes') > -1) s.booked += 3;
+  if (p.indexOf('booking') > -1) s.booked += 2;
+  if (p.indexOf('tech') > -1) s.office += 4;
+  if (a.biz === 'office') s.office += 3;
+  var TRADES = ['concrete','hardscape','hvac','landscape','home','beauty'];
+  if (TRADES.indexOf(a.biz) > -1) s.booked += 1;
+  if (a.biz === 'hvac') s.booked += 1;
+  if (a.team === 'mid' && (a.biz === 'office' || p.indexOf('tech') > -1)) s.office += 1;
+  if (a.age === 'new') s.found += 2;
+  if (a.age === 'est') s.booked += 1;
+  if (a.team === 'solo') s.found += 1;
+  if (a.budget === 'low') s.found += 3;
+  if (a.budget === 'high') { s.booked += 1; s.office += 1; }
+  // Office plan only when there is a real tech need or an office business
+  if (!(p.indexOf('tech') > -1 || a.biz === 'office')) s.office = -99;
+  // Pick the highest score; ties go to the lower-cost plan
+  var order = ['found','booked','office'], best = 'found';
+  order.forEach(function(k){ if (s[k] > s[best]) best = k; });
+  var avatar = best === 'office' ? AVATARS.office : best === 'booked' ? AVATARS.busy : ((a.age === 'new' || a.site === 'none') ? AVATARS.launch : AVATARS.hidden);
+  return finalize(best, avatar, a, s);
 }
 
-function setTheme(t) {
-  if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-  else document.documentElement.removeAttribute('data-theme');
-  localStorage.setItem('sf-theme', t);
-  updateToggle();
+function finalize(planKey, avatar, a, scores){
+  var p = a.pains || [], why = [];
+  var add = function(t){ if (why.length < 3 && why.indexOf(t) === -1) why.push(t); };
+  if (planKey === 'custom') {
+    add('With a team of 16 or more, or several locations, a standard plan would either miss things you need or charge you for things you do not.');
+    add('A short planning call lets us scope pages, systems, and locations, then send a fixed written quote.');
+  } else {
+    var TRADE_WHY = {
+      concrete: 'Concrete jobs are high-ticket, so one extra booked driveway or patio a month covers the plan many times over.',
+      hardscape: 'Hardscape buyers compare portfolios before they call. A site with a project gallery and quote request turns browsers into estimates.',
+      hvac: "When an AC goes out in Phoenix, homeowners call the next company within minutes. Speed of response decides who gets the job.",
+      landscape: 'Backyard projects start with photos and ideas. A gallery and simple quote form bring you the homeowners who are ready to spend.'
+    };
+    if (TRADE_WHY[a.biz] && planKey !== 'office') add(TRADE_WHY[a.biz]);
+    if (p.indexOf('visibility') > -1) add("You said customers can't find you on Google. This plan manages your Google Business Profile and local pages so you show up in nearby searches.");
+    if (p.indexOf('reviews') > -1) add('You need more reviews. Every completed job automatically triggers a review request, so your count grows without you asking each customer.');
+    if (p.indexOf('calls') > -1) add("Missed calls are costing you jobs. Missed-call text-back replies within seconds, so callers hear from you before they call someone else.");
+    if (p.indexOf('quotes') > -1) add('Estimates are eating your time. A quote flow collects project details and photos up front, so you only drive out for serious jobs.');
+    if (p.indexOf('booking') > -1) add('Customers can book online instead of playing phone tag, and reminders go out automatically.');
+    if (p.indexOf('tech') > -1) add('Your tech problems get one number to call. Remote helpdesk and monitoring catch issues before they stop your team.');
+    if (a.site === 'none') add("You don't have a website yet, so setup includes a professional site built for your trade.");
+    if (a.site === 'weak') add('Your current site is not bringing in leads. Setup rebuilds or repairs it so visitors turn into calls.');
+    if (a.budget === 'low' && planKey === 'found') add('It fits a lean budget and covers the foundation first. You can upgrade later without starting over.');
+    if (a.age === 'new' && planKey === 'found') add('For a newer business, getting found and building reviews comes before heavier automation.');
+    var PLAN_WHY = {
+      found: ['Get Found covers the foundation: a professional site, a managed Google profile, and reviews that build on their own.','Your monthly service is included, so hosting, updates, and fixes are handled for you.'],
+      booked: ['Get Booked adds the systems that turn interest into jobs: missed-call text-back, automatic follow-up, and a quote or booking flow.','Your monthly service is included, so hosting, updates, and fixes are handled for you.'],
+      office: ['Office Complete puts your marketing and your tech support with one partner and one monthly bill.','Remote helpdesk and monitoring catch problems before they stop your team.']
+    };
+    (PLAN_WHY[planKey] || []).forEach(function(t){ if (why.length < 2) add(t); });
+    add('Everything runs in the background after launch, with a monthly report so you can see what it is doing.');
+  }
+  // Alternatives the visitor can switch to
+  var alts = ['found','booked','office'].filter(function(k){ return k !== planKey && (k !== 'office' || a.biz === 'office' || p.indexOf('tech') > -1); });
+  return { planKey: planKey, avatar: avatar, why: why, alts: alts, scores: scores || null };
 }
-function updateToggle() {
-  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  var bl = document.getElementById('btn-light');
-  var bd = document.getElementById('btn-dark');
-  if (bl) bl.classList.toggle('active', !isDark);
-  if (bd) bd.classList.toggle('active', isDark);
+
+
+/* =========================================================
+   SITE CHECK FLOW
+   ========================================================= */
+var INDUSTRIES = [
+  {v:'concrete',i:'🧱',n:'Concrete'},{v:'hardscape',i:'🪨',n:'Hardscape'},{v:'hvac',i:'❄️',n:'HVAC'},{v:'landscape',i:'🌵',n:'Backyard landscaping'},
+  {v:'home',i:'🏡',n:'Home services'},{v:'beauty',i:'✂️',n:'Beauty and wellness'},{v:'office',i:'🏢',n:'Office or professional'},{v:'other',i:'⭐',n:'Another service business'}
+];
+var ISSUES = [
+  {v:'visibility',i:'🔍',n:"Customers can't find me on Google"},{v:'calls',i:'📞',n:'Missed calls and slow follow-up'},
+  {v:'reviews',i:'⭐',n:'Not enough reviews'},{v:'outdated',i:'🐢',n:'My site looks outdated or loads slowly'},
+  {v:'quotes',i:'📝',n:'Too much time on estimates'},{v:'booking',i:'📅',n:'No online booking'},
+  {v:'tech',i:'💻',n:'Computer, Wi-Fi, or email problems'},{v:'other',i:'✏️',n:'Something else (type it in)'}
+];
+var STEPS = ['site','industry','issues','contact'];
+var st = { step:0, site:{}, industries:[], issues:[], otherIssue:'', contact:{}, scan:null, result:null };
+var stage = document.getElementById('stage');
+function track(ev, extra){ try{ window.dataLayer = window.dataLayer || []; var o={event:ev}; for(var k in (extra||{})) o[k]=extra[k]; window.dataLayer.push(o);}catch(e){} }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function money(n){ return '$' + Number(n).toLocaleString('en-US'); }
+function prog(label, pct){ document.getElementById('progressFill').style.width = pct + '%'; document.getElementById('progressLabel').textContent = label; }
+function navRow(nextLabel, disabled){ return '<div class="nav-row">' + (st.step > 0 ? '<button type="button" class="btn btn-ghost" id="back">Back</button>' : '<span></span>') + '<button type="button" class="btn btn-primary" id="next"' + (disabled ? ' disabled' : '') + '>' + nextLabel + '</button></div>'; }
+function bindNav(onNext){ var b=document.getElementById('back'); if(b) b.onclick=function(){ st.step--; render(); }; document.getElementById('next').onclick=onNext; }
+function tiles(list, sel){ return '<div class="opts">' + list.map(function(o){ return '<button type="button" class="opt" aria-pressed="' + (sel.indexOf(o.v) > -1) + '" data-v="' + o.v + '"><span class="opt-ico" aria-hidden="true">' + o.i + '</span><span class="opt-name">' + esc(o.n) + '</span></button>'; }).join('') + '</div>'; }
+
+function render(){
+  var key = STEPS[st.step];
+  prog('Step ' + (st.step + 1) + ' of ' + STEPS.length, (st.step / STEPS.length) * 100);
+  if (key === 'site') {
+    stage.innerHTML = '<div class="step enter"><h2 class="q-title">Which website should we check?</h2><p class="q-hint">Your homepage address is fine.</p>' +
+      '<div class="field"><label for="url">Website</label><input id="url" placeholder="yourbusiness.com" value="' + esc(st.site.url) + '"' + (st.site.none ? ' disabled' : '') + '></div>' +
+      '<label class="chk"><input type="checkbox" id="nosite"' + (st.site.none ? ' checked' : '') + '> I don\'t have a website yet</label>' +
+      '<div class="field"><label for="bn">Business name</label><input id="bn" autocomplete="organization" value="' + esc(st.site.business) + '"></div>' +
+      '<p class="err" id="err">Please add your website (or check the box) and your business name.</p>' + navRow('Continue') + '</div>';
+    document.getElementById('nosite').onchange = function(){ document.getElementById('url').disabled = this.checked; };
+    bindNav(function(){
+      var none = document.getElementById('nosite').checked, url = document.getElementById('url').value.trim(), bn = document.getElementById('bn').value.trim();
+      if ((!none && !/^[^\s]+\.[a-z]{2,}/i.test(url.replace(/^https?:\/\//,''))) || !bn) { document.getElementById('err').style.display='block'; return; }
+      st.site = { url: none ? '' : url, none: none, business: bn }; track('site_check_started'); st.step++; render();
+    });
+  } else if (key === 'industry') {
+    stage.innerHTML = '<div class="step enter"><h2 class="q-title">What industry are you in?</h2><p class="q-hint">Choose all that apply.</p>' + tiles(INDUSTRIES, st.industries) + navRow('Continue', !st.industries.length) + '</div>';
+    stage.querySelectorAll('.opt').forEach(function(b){ b.onclick = function(){ var v=b.getAttribute('data-v'), i=st.industries.indexOf(v); if(i>-1) st.industries.splice(i,1); else st.industries.push(v); render(); }; });
+    bindNav(function(){ st.step++; render(); });
+  } else if (key === 'issues') {
+    var hasOther = st.issues.indexOf('other') > -1;
+    stage.innerHTML = '<div class="step enter"><h2 class="q-title">What are your top 2 issues right now?</h2><p class="q-hint">Pick up to 2. Choose "Something else" to type your own.</p>' + tiles(ISSUES, st.issues) +
+      (hasOther ? '<div class="field other-input"><label for="oth">Describe it in a few words</label><input id="oth" maxlength="140" value="' + esc(st.otherIssue) + '" placeholder="Example: My site doesn\'t show my service areas"></div>' : '') +
+      navRow('Continue', !st.issues.length) + '</div>';
+    stage.querySelectorAll('.opt').forEach(function(b){ b.onclick = function(){ var o=document.getElementById('oth'); if(o) st.otherIssue=o.value; var v=b.getAttribute('data-v'), i=st.issues.indexOf(v); if(i>-1) st.issues.splice(i,1); else { if(st.issues.length>=2) st.issues.shift(); st.issues.push(v); } render(); }; });
+    bindNav(function(){ var o=document.getElementById('oth'); if(o) st.otherIssue=o.value.trim(); st.step++; render(); });
+  } else if (key === 'contact') {
+    var c = st.contact;
+    stage.innerHTML = '<div class="step enter"><h2 class="q-title">Where should we send your results?</h2><p class="q-hint">Your results appear on the next screen. We email a copy too.</p>' +
+      '<div class="grid2"><div class="field"><label for="fn">First name</label><input id="fn" autocomplete="given-name" value="' + esc(c.first_name) + '"></div>' +
+      '<div class="field"><label for="em">Email</label><input id="em" type="email" autocomplete="email" value="' + esc(c.email) + '"></div></div>' +
+      '<div class="field"><label for="ph">Phone (optional)</label><input id="ph" type="tel" autocomplete="tel" value="' + esc(c.phone) + '"></div>' +
+      '<p class="fine">We use this only to send your results and follow up about them. No spam, opt out anytime.</p>' +
+      '<p class="err" id="err">Please add your first name and a valid email.</p>' + navRow(st.site.none ? 'See my recommendation' : 'Run my Site Check') + '</div>';
+    bindNav(function(){
+      var d = { first_name: document.getElementById('fn').value.trim(), email: document.getElementById('em').value.trim(), phone: document.getElementById('ph').value.trim() };
+      if (!d.first_name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { document.getElementById('err').style.display='block'; return; }
+      st.contact = d; runScan();
+    });
+  }
 }
+
+/* ---------- Scan (Google PageSpeed Insights) ---------- */
+function runScan(){
+  prog('Checking your site', 90);
+  if (st.site.none) { st.scan = { skipped:true }; return showResults(); }
+  stage.innerHTML = '<div class="scan"><div class="spinner"></div><h2 class="q-title">Checking ' + esc(st.site.url) + '</h2><p class="q-hint">This usually takes 15 to 40 seconds.</p>' +
+    '<ul class="scan-steps"><li id="s1" class="on">Loading your site on a phone</li><li id="s2">Measuring speed</li><li id="s3">Checking search basics</li><li id="s4">Looking for technical issues</li></ul></div>';
+  var n = 1, timer = setInterval(function(){ n = Math.min(4, n + 1); var el = document.getElementById('s' + n); if (el) el.className = 'on'; }, 6000);
+  var url = /^https?:\/\//i.test(st.site.url) ? st.site.url : 'https://' + st.site.url;
+  var api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + encodeURIComponent(url) + '&strategy=mobile&category=PERFORMANCE&category=SEO&category=ACCESSIBILITY&category=BEST_PRACTICES' + (SF_CONFIG.psiKey ? '&key=' + SF_CONFIG.psiKey : '');
+  var ctrl = ('AbortController' in window) ? new AbortController() : null;
+  var to = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 60000);
+  fetch(api, ctrl ? { signal: ctrl.signal } : {}).then(function(r){ return r.json(); }).then(function(j){
+    clearInterval(timer); clearTimeout(to);
+    if (!j || !j.lighthouseResult) throw new Error('no result');
+    st.scan = parseScan(j.lighthouseResult, url); showResults();
+  }).catch(function(){ clearInterval(timer); clearTimeout(to); st.scan = { failed:true }; showResults(); });
+}
+function parseScan(lh, url){
+  var cats = lh.categories || {}, audits = lh.audits || {};
+  var pct = function(c){ return cats[c] && cats[c].score != null ? Math.round(cats[c].score * 100) : null; };
+  var failing = [];
+  ['seo','accessibility','best-practices','performance'].forEach(function(c){
+    ((cats[c] || {}).auditRefs || []).forEach(function(ref){
+      var a = audits[ref.id]; if (!a) return;
+      if (a.score !== null && a.score !== undefined && a.score < 0.9 && ['notApplicable','informative','manual'].indexOf(a.scoreDisplayMode) === -1 && ref.weight > 0)
+        failing.push({ cat:c, id:ref.id, title:a.title, weight:ref.weight });
+    });
+  });
+  var seen = {}; failing = failing.filter(function(f){ if (seen[f.id]) return false; seen[f.id] = 1; return true; }).sort(function(a,b){ return b.weight - a.weight; });
+  var lcp = audits['largest-contentful-paint'] ? audits['largest-contentful-paint'].displayValue : '';
+  return { perf:pct('performance'), seo:pct('seo'), a11y:pct('accessibility'), bp:pct('best-practices'), lcp:lcp, failing:failing, https: /^https:/i.test(lh.finalUrl || lh.finalDisplayedUrl || url) };
+}
+function cls(n){ return n == null ? '' : n >= 90 ? 'good' : n >= 50 ? 'ok' : 'bad'; }
+
+/* ---------- Results: findings, pain points, recommendation ---------- */
+function showResults(){
+  prog('Your results', 100);
+  var sc = st.scan || {}, c = st.contact, iss = st.issues;
+  var siteState = st.site.none ? 'none' : (iss.indexOf('outdated') > -1 || (sc.perf != null && sc.perf < 50) ? 'weak' : 'ok');
+  var pains = iss.filter(function(v){ return ['visibility','calls','reviews','quotes','booking','tech'].indexOf(v) > -1; });
+  if (sc.seo != null && sc.seo < 80 && pains.indexOf('visibility') === -1) pains.push('visibility');
+  var primary = st.industries.indexOf('office') > -1 ? 'office' : (st.industries[0] || 'other');
+  var answers = { biz: primary, site: siteState, pains: pains.slice(0,3), age:'young', team:'small', budget:'unsure' };
+  st.result = recommend(answers);
+  var r = st.result, plan = SF_CONFIG.plans[r.planKey];
+
+  var h = '<div class="step enter"><div class="result-head"><span class="avatar-tag">Site Check: ' + esc(st.site.business) + '</span>' +
+          '<h2>' + esc(c.first_name) + ', here\'s what we found</h2>';
+  if (sc.skipped) h += '<p>You don\'t have a website yet, so we skipped the scan and went straight to what you need to get found.</p></div>';
+  else if (sc.failed) h += '<p>We couldn\'t finish the automatic scan just now (some sites block testing tools). Your recommendation below is based on your answers, and the full report includes a manual review.</p></div>';
+  else {
+    h += '<p>We tested ' + esc(st.site.url) + ' the way a customer sees it on their phone.</p></div>';
+    h += '<div class="scores">' +
+      '<div class="score"><div class="score-n ' + cls(sc.perf) + '">' + (sc.perf == null ? '?' : sc.perf) + '</div><div class="score-l">Mobile speed</div></div>' +
+      '<div class="score"><div class="score-n ' + cls(sc.seo) + '">' + (sc.seo == null ? '?' : sc.seo) + '</div><div class="score-l">Search basics</div></div>' +
+      '<div class="score"><div class="score-n ' + cls(sc.a11y) + '">' + (sc.a11y == null ? '?' : sc.a11y) + '</div><div class="score-l">Accessibility</div></div></div>';
+    var shown = [];
+    if (sc.perf != null && sc.perf < 90) shown.push('<div class="find"><b>Slow on phones</b>Your main content takes ' + esc(sc.lcp || 'several seconds') + ' to appear on a phone. Many visitors leave before a slow page finishes loading.</div>');
+    if (!sc.https) shown.push('<div class="find"><b>Not fully secure</b>Your site does not load securely (https). Browsers can warn visitors, which costs trust and calls.</div>');
+    var seoFail = sc.failing.filter(function(f){ return f.cat === 'seo'; })[0] || sc.failing.filter(function(f){ return f.cat !== 'performance'; })[0];
+    if (shown.length < 2 && seoFail) shown.push('<div class="find"><b>Issue found</b>' + esc(seoFail.title) + '.</div>');
+    if (!shown.length) shown.push('<div class="find" style="border-left-color:#16a34a"><b>Solid technical base</b>Your site passes the main technical checks. The bigger opportunity is turning visitors into booked jobs.</div>');
+    h += '<div class="why"><h3>What we found</h3>' + shown.slice(0,2).join('') + '</div>';
+    var more = Math.max(0, sc.failing.length - Math.min(2, shown.length));
+    if (more > 0) h += '<div class="locked"><div class="blur">Issue details and the fix for each are listed here.<br>Ranked by how much each one is likely costing you.<br>Includes search, speed, and conversion problems.</div>' +
+      '<div class="lock-msg"><b>' + more + ' more issue' + (more === 1 ? '' : 's') + ' found</b>Included in your full report.</div></div>';
+  }
+  var painLines = { visibility:'Customers searching nearby aren\'t finding you easily.', calls:'Missed calls and slow replies are sending jobs to competitors.', reviews:'Too few reviews make you look less established than you are.', outdated:'An outdated or slow site makes visitors leave before they call.', quotes:'Free estimates are eating hours that should go to paid work.', booking:'Customers can\'t book on their own, so every job starts with phone tag.', tech:'Tech problems are slowing your team down with no one to call.' };
+  var pl = iss.filter(function(v){ return painLines[v]; }).map(function(v){ return '<li>' + painLines[v] + '</li>'; });
+  if (st.otherIssue) pl.push('<li>' + esc(st.otherIssue) + '</li>');
+  if (pl.length) h += '<div class="why"><h3>What this means for you</h3><ul>' + pl.join('') + '</ul></div>';
+  if (iss.indexOf('visibility') === -1) r.why = r.why.map(function(w){ return w.indexOf("You said customers can't find you on Google") === 0 ? 'Your search basics score shows room to improve. This plan manages your Google Business Profile and local pages so you show up in nearby searches.' : w; });
+
+  h += '<div class="why"><h3>Our recommendation: ' + esc(plan.name) + '</h3><ul>' + r.why.map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>' +
+       '<div class="incl"><h3>What you get</h3><ul>' + plan.includes.map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>';
+  if (r.planKey === 'custom') {
+    h += '<div class="actions"><a class="btn btn-primary btn-block" href="' + SF_CONFIG.calendly + '" target="_blank" rel="noopener">Book a 30-minute planning call</a></div>';
+  } else {
+    var founding = Math.round(plan.monthly * (1 - SF_CONFIG.foundingDiscount));
+    h += '<div class="price-box"><div class="price-row"><span class="price-name">' + esc(plan.name) + '</span><span class="price-main">' + (plan.monthlyNote ? '<small>' + plan.monthlyNote + ' </small>' : '') + money(plan.monthly) + '<small>/month</small></span></div>' +
+      '<p class="price-setup">' + esc(plan.setupNote) + '. Your full Site Check report is included.</p>' +
+      (SF_CONFIG.foundingSpotsLeft > 0 ? '<p class="founding"><strong>Founding client offer:</strong> ' + money(founding) + '/month for your first 12 months with a 12-month term. ' + SF_CONFIG.foundingSpotsLeft + ' spots available.</p>' : '') + '</div>' +
+      '<div class="actions"><button type="button" class="btn btn-primary btn-block" id="startPlan">Start ' + esc(plan.name) + '</button>' +
+      (SF_CONFIG.foundingSpotsLeft > 0 ? '<button type="button" class="btn btn-ghost btn-block" id="startFounding">Start with founding pricing</button>' : '') + '</div>';
+  }
+  h += '<div class="report-box" id="reportBox"><b>Not ready to start?</b> Get the full detailed report with every issue and its fix for ' + money(SF_CONFIG.reportPrice) + '. The ' + money(SF_CONFIG.reportPrice) + ' is credited toward your setup if you start a plan within 30 days.<div style="margin-top:10px"><button type="button" class="btn btn-ghost" id="buyReport">Get the full report for ' + money(SF_CONFIG.reportPrice) + '</button></div></div>' +
+       '<div class="done" id="reserved"><h3>You\'re all set</h3><p class="fine" id="reservedMsg"></p></div>' +
+       '<div style="text-align:center;margin-top:12px"><a class="linkish" href="/plan">Compare all plans</a></div></div>';
+  stage.innerHTML = h;
+  send('site_check_results');
+  track('site_check_completed', { plan: r.planKey, perf: sc.perf, seo: sc.seo });
+  var sp = document.getElementById('startPlan'); if (sp) sp.onclick = function(){ start(false); };
+  var sf = document.getElementById('startFounding'); if (sf) sf.onclick = function(){ start(true); };
+  document.getElementById('buyReport').onclick = buyReport;
+}
+
+function goStripe(link, stageName, extra){
+  var u = link + (link.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(st.contact.email) + '&client_reference_id=' + encodeURIComponent((st.site.business || 'lead').replace(/[^A-Za-z0-9_-]/g,'_').slice(0,190));
+  send(stageName, extra); window.location.href = u;
+}
+function reserved(msg, stageName, extra){
+  send(stageName, extra);
+  stage.querySelectorAll('.actions,#reportBox').forEach(function(el){ el.style.display = 'none'; });
+  document.getElementById('reservedMsg').textContent = msg; document.getElementById('reserved').classList.add('show');
+}
+function start(founding){
+  var plan = SF_CONFIG.plans[st.result.planKey], link = founding ? plan.stripeLinkFounding : plan.stripeLink;
+  track('site_check_checkout_click', { plan: st.result.planKey, founding: !!founding });
+  if (link) goStripe(link, 'checkout_started', { founding: !!founding });
+  else reserved('Your spot is reserved. Your secure checkout link and full report are on the way to ' + st.contact.email + '. Nothing is charged until you complete checkout.', 'plan_reserved', { founding: !!founding });
+}
+function buyReport(){
+  track('site_check_report_click');
+  if (SF_CONFIG.reportLink) goStripe(SF_CONFIG.reportLink, 'report_checkout_started');
+  else reserved('Your full report request is in. Your secure payment link is on the way to ' + st.contact.email + ', and the $49 is credited toward setup if you start within 30 days.', 'report_requested');
+}
+
+/* ---------- Lead delivery ---------- */
+function send(stageName, extra){
+  var r = st.result, c = st.contact, sc = st.scan || {};
+  var payload = {
+    _subject: 'Site Check [' + stageName + ']: ' + (st.site.business || 'New lead') + (r ? ' → ' + SF_CONFIG.plans[r.planKey].name : ''),
+    lead_stage: stageName, source: 'site_check', first_name: c.first_name, email: c.email, phone: c.phone,
+    business: st.site.business, website: st.site.url || 'none', industries: st.industries.join(', '),
+    top_issues: st.issues.join(', '), other_issue: st.otherIssue,
+    mobile_speed: sc.perf, search_basics: sc.seo, accessibility: sc.a11y, best_practices: sc.bp, issues_found: sc.failing ? sc.failing.length : '',
+    issue_list: sc.failing ? sc.failing.slice(0,15).map(function(f){ return f.title; }).join(' | ') : '',
+    scan_status: sc.skipped ? 'no website' : sc.failed ? 'scan failed' : 'ok',
+    recommended_plan: r ? SF_CONFIG.plans[r.planKey].name : '', page: location.href, submitted_at: new Date().toISOString()
+  };
+  for (var k in (extra||{})) payload[k] = extra[k];
+  try { fetch(SF_CONFIG.formspree, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload) }).catch(function(){}); } catch(e){}
+  if (SF_CONFIG.makeWebhook) { try { fetch(SF_CONFIG.makeWebhook, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) }).catch(function(){}); } catch(e){} }
+}
+
+function setTheme(t){ if (t === 'dark') document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme'); localStorage.setItem('sf-theme', t); updateToggle(); }
+function updateToggle(){ var d = document.documentElement.getAttribute('data-theme') === 'dark'; var bl=document.getElementById('btn-light'), bd=document.getElementById('btn-dark'); if(bl) bl.classList.toggle('active',!d); if(bd) bd.classList.toggle('active',d); }
 updateToggle();
+render();
 </script>
 </body>
 </html>

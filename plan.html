@@ -332,7 +332,12 @@ function renderContact(){
     ['first_name','business','email','phone','website'].forEach(function(k){ d[k] = (f.elements[k].value || '').trim(); });
     if (!d.first_name || !d.business || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { document.getElementById('cerr').style.display='block'; return; }
     state.contact = d;
-    state.result = recommend(state.answers);
+    if (state.forcePlan) {
+      var fp = state.forcePlan;
+      state.result = finalize(fp, fp === 'office' ? AVATARS.office : fp === 'booked' ? AVATARS.busy : AVATARS.hidden, state.answers);
+    } else {
+      state.result = recommend(state.answers);
+    }
     send('plan_recommended');
     track('plan_finder_completed', {avatar: state.result.avatar.key, plan: state.result.planKey});
     render();
@@ -406,6 +411,12 @@ function finalize(planKey, avatar, a, scores){
     if (a.site === 'weak') add('Your current site is not bringing in leads. Setup rebuilds or repairs it so visitors turn into calls.');
     if (a.budget === 'low' && planKey === 'found') add('It fits a lean budget and covers the foundation first. You can upgrade later without starting over.');
     if (a.age === 'new' && planKey === 'found') add('For a newer business, getting found and building reviews comes before heavier automation.');
+    var PLAN_WHY = {
+      found: ['Get Found covers the foundation: a professional site, a managed Google profile, and reviews that build on their own.','Your monthly service is included, so hosting, updates, and fixes are handled for you.'],
+      booked: ['Get Booked adds the systems that turn interest into jobs: missed-call text-back, automatic follow-up, and a quote or booking flow.','Your monthly service is included, so hosting, updates, and fixes are handled for you.'],
+      office: ['Office Complete puts your marketing and your tech support with one partner and one monthly bill.','Remote helpdesk and monitoring catch problems before they stop your team.']
+    };
+    (PLAN_WHY[planKey] || []).forEach(function(t){ if (why.length < 2) add(t); });
     add('Everything runs in the background after launch, with a monthly report so you can see what it is doing.');
   }
   // Alternatives the visitor can switch to
@@ -464,7 +475,7 @@ function renderResult(){
   var bc = document.getElementById('bookCall'); if (bc) bc.onclick = function(){ track('plan_finder_book_call'); };
   document.getElementById('askQ').onclick = function(){ document.getElementById('qbox').classList.toggle('open'); };
   var sa = document.getElementById('seeAlts'); if (sa) sa.onclick = function(){ document.getElementById('altbox').classList.toggle('open'); };
-  document.getElementById('restart').onclick = function(){ state = { step:0, answers:{pains:[]}, contact:state.contact, result:null }; render(); };
+  document.getElementById('restart').onclick = function(){ state = { step:0, answers:{pains:[]}, contact:state.contact, result:null }; history.replaceState(null,'','/plan'); render(); };
   stage.querySelectorAll('[data-switch]').forEach(function(b){ b.onclick = function(){
     var k = b.getAttribute('data-switch');
     track('plan_finder_switch', {from: state.result.planKey, to: k});
@@ -518,6 +529,12 @@ function send(stageName, extra){
 function setTheme(t){ if (t === 'dark') document.documentElement.setAttribute('data-theme','dark'); else document.documentElement.removeAttribute('data-theme'); localStorage.setItem('sf-theme', t); updateToggle(); }
 function updateToggle(){ var d = document.documentElement.getAttribute('data-theme') === 'dark'; var bl=document.getElementById('btn-light'), bd=document.getElementById('btn-dark'); if(bl) bl.classList.toggle('active',!d); if(bd) bd.classList.toggle('active',d); }
 updateToggle();
+(function(){
+  var q = new URLSearchParams(location.search), biz = q.get('biz'), plan = q.get('plan');
+  var validBiz = QUESTIONS[0].options.map(function(o){ return o.v; });
+  if (biz && validBiz.indexOf(biz) > -1) { state.answers.biz = biz; state.step = 1; track('plan_finder_started', {entry:'biz_' + biz}); }
+  if (plan && SF_CONFIG.plans[plan] && plan !== 'custom') { state.forcePlan = plan; state.step = QUESTIONS.length; track('plan_finder_started', {entry:'plan_' + plan}); }
+})();
 if (/[?&]paid=1/.test(location.search)) {
   track('plan_purchase_complete');
   document.getElementById('progress').style.display = 'none';
